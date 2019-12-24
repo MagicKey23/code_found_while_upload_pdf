@@ -1,0 +1,4765 @@
+Error Code: ee176fac-f83f-4fd6-9a5d-dddc2c6935bc
+===================
+Founded on : 12/24/19 5:50 AM
+
+On website: s.jobs.brassing.com 
+
+Type of error: 
+
+Possibly Content Ownership
+
+Steps produce the error:
+
+1. Look up job website for job
+
+2. Maxim Internship, Dallas Texas
+
+3. Insert  resume.pdf file downloaded from Google
+
+4. Error Code: ee176fac-f83f-4fd6-9a5d-dddc2c6935bc
+
+5.  View Page Source listed over 4k8 Lines of code
+
+Risk? 
+  
+Unknown
+
+Possibly can be inject by many different techniques
+
+Code: 
+
+
+<script  language="JavaScript1.2">
+
+/*_/^\_I_/^\_B_/^\_M_/^\_
+
+  Licensed Materials - Property of IBM5725-N92(c) Copyright IBM Corp.
+  2014, 2018.US Government Users Restricted Rights- Use,
+  duplication or disclosure restricted by GSA ADP Schedule Contract  with IBM Corp.
+  
+
+`\V/'I`\V/'B`\V/'M`\V/'*/
+// ---------------------------- //
+// General JavaScript Library:  //
+// Author : Beji Joseph         //
+// ---------------------------- //
+  
+       var subwindow;
+       var lnk;
+	   	
+       function showHelp(lnk)
+       {
+       if (!subwindow || subwindow.closed)
+       {
+		subwindow =  window.open(lnk,"help","height=400,width=450,menubar=no,toolbar=no,resizable=no,scrollbars=yes,alwaysRaised");
+                        if (!subwindow.opener)
+                        {
+                        subwindow.opener = window;
+                        }
+                }
+        else
+                {
+                subwindow.focus();      
+                window.open(lnk,"help");                  
+                }
+        }
+
+function inValidChar(passedVal)
+{
+	if (passedVal == "\f") 
+		return true;
+	else 
+	{
+		if (passedVal == "\n") 
+			return true;
+		else 
+		{
+			if(passedVal == "\r") 
+				return true;
+			else 
+			{
+				if(passedVal == "\t")  
+					return true;
+			}
+		}
+	}
+	return false;
+}
+
+function hasValue(passedVal, bInValidCharCheck)
+{
+	var charHold;
+	
+	if (ReplaceInString(passedVal, " ", "") == '') return false;
+	if (ReplaceInString(ReplaceInString(ReplaceInString(ReplaceInString(passedVal, "\f", ""), "\r", ""), "\n", ""), "\t", "") == '') return false;
+	
+	if(bInValidCharCheck)
+		for (i=0; i<passedVal.length; i++) 
+		{
+			charHold = passedVal.charAt(i);
+			if (inValidChar(charHold)) return false;
+		}
+	return true;
+}
+
+// C:173 start Added these functions for controlling the Hover texts DIV tags
+function getLayer(SRC,displayLength,strHoverFieldlength)
+{
+    displayLength = displayLength * 1;
+	strHoverFieldlength = strHoverFieldlength * 1;
+	
+	// Make hidden all divs into the page first
+	var divs = document.getElementsByTagName('div'); // all divs
+	for (var i = 0; i < divs.length; i++) 
+	{
+		var el=  divs.item(i);
+		var str=el.id;
+		if (str.indexOf('TGHover') != -1)
+		{
+			var tDIV2 = document.getElementById(str);         
+			tDIV2.style.visibility = "hidden";
+		}
+		
+	} 
+	var tDIV = document.getElementById("TGHover" + SRC) ;
+	var displayValue = document.getElementById("TGHoverVal" + SRC).value ;
+	displayValue += document.getElementById("TGHoverClick" + SRC).value ;
+	
+	// Hide the div where string contains blank value or none
+	if ( displayLength < 1)	
+	{		          
+		tDIV.style.visibility = "hidden";	
+		return;
+	}
+	// Calculate the width to be displayed
+	var widthofDiv ;
+	if (displayLength > strHoverFieldlength )
+	{
+		widthofDiv = strHoverFieldlength * 6;
+	}
+	else
+	{
+		widthofDiv = displayLength * 6;
+	}
+	// Get the exact width of the main table.
+	var ExactDivWidth = ( document.getElementById("MainTable").clientWidth - 120 ) * 1;
+	
+	if (widthofDiv < 250 )	
+		widthofDiv = 250
+	else if ( displayLength > 65 && displayLength < 150 )	
+		widthofDiv = ( ExactDivWidth < 400 ) ? ExactDivWidth : 400		// This is the maximum width to be displayed.
+	else if ( displayLength > 150 && displayLength < 300)	
+		widthofDiv = ( ExactDivWidth < 500 ) ? ExactDivWidth : 500		// This is the maximum width to be displayed.
+	else if ( displayLength > 300)	
+		widthofDiv = ExactDivWidth;		// This is the maximum width to be displayed.
+		
+	// Make visible the selected one.
+	tDIV.style.width = widthofDiv;	
+	tDIV.style.cursor = "hand";
+	tDIV.style.visibility = "visible";		
+	tDIV.innerHTML = displayValue;	
+}
+
+function stringTrim (str) {
+	str = str.replace(/^\s+/, '');
+	for (var i = str.length - 1; i <= 0; i--) {
+		if (/\S/.test(str.charAt(i))) {
+			str = str.substring(0, i + 1);
+			break;
+		}
+	}
+	return str;
+}
+
+function floatLayer(SRC,e)
+{ 
+	
+	var tDIV = document.getElementById("TGHover" + SRC); 	
+	var TotaltableHeight; 
+	
+	var divHeight = ( document.getElementById("TGHover" + SRC).clientHeight ) * 1;
+	var tableHeight = ( document.getElementById("MainTable").clientHeight + document.body.scrollTop ) * 1;
+	TotaltableHeight = tableHeight ;
+	
+	//if (document.getElementById("MenuTable").clientHeight != null )
+	//    TotaltableHeight += ( document.getElementById("MenuTable").clientHeight ) * 1;
+	
+	if (document.getElementById("TitleCriteriaTable") != null )    
+	    TotaltableHeight += ( document.getElementById("TitleCriteriaTable").clientHeight ) * 1;
+	
+	if (document.getElementById("PagingTable") != null)    
+	    TotaltableHeight += ( document.getElementById("PagingTable").clientHeight ) * 1;
+	    
+    if (document.getElementById("ButtonTable")	!= null)    
+	    TotaltableHeight += ( document.getElementById("ButtonTable").clientHeight ) * 1;
+   
+
+	// Just set the left position. No need to set the top position. 
+	if(navigator.appName.indexOf("Microsoft") != -1)
+	{	   
+	    var leftStyle = ( e.clientX + document.body.scrollLeft + 25 ) * 1;
+	    var topStyle = ( e.clientY + document.body.scrollTop ) * 1;
+	    var correctPosition = ( topStyle + divHeight ) ;  	  
+	    e = (e) ? e : window.event;
+        var element1 = (e.target) ? e.target: e.srcElement;
+	    if (correctPosition >  TotaltableHeight )
+	    {   
+	        tDIV.style.marginTop =  ( (-1*divHeight + element1.parentNode.clientHeight)   + 'px'); 
+	        tDIV.style.left = leftStyle; 
+	    }
+	    else
+	    {   
+	        tDIV.style.left = leftStyle;
+	     }   	 
+	}
+	else // For all other browsers use this.
+	{   
+	    var leftStyle = ( e.layerX + 25 ) * 1;
+	    var topStyle = ( e.layerY + document.body.scrollTop ) * 1;
+	    var correctPosition = ( topStyle + divHeight );    	
+	    
+	    e = (e) ? e : window.event;    
+	    var element2 = (e.target) ? e.target: e.srcElement;	    
+
+	    if (correctPosition >  TotaltableHeight )
+	    {
+	        tDIV.style.marginTop =  ( (-1*divHeight + element2.parentNode.clientHeight)   + 'px'); 
+	        tDIV.style.left = leftStyle;	     
+	    }
+	    else
+	    {
+	        tDIV.style.left = leftStyle;
+	     }   
+    }
+}	
+function hideLayer(SRC)
+{
+	var tDIV = document.getElementById(SRC)
+	tDIV.style.visibility='hidden'
+}
+function hideAllLayer()
+{
+	// Make hidden all divs into the page first
+	var divs = document.getElementsByTagName('div'); // all divs
+	for (var i = 0; i < divs.length; i++) 
+	{
+		var el=  divs.item(i);
+		var str=el.id;
+		if (str.indexOf('TGHover') != -1)
+		{
+			var tDIV2 = document.getElementById(str)             
+			tDIV2.style.visibility = "hidden"
+		}
+	} 
+}				
+//C:173 end till here added these fucntions.
+
+function emailCheck(emailField)
+{
+	if(emailField.value.replace(/ /g, "").length != 0)
+	{
+		var RegExp1 = new RegExp('^[a-zA-Z0-9]+(?!.*\\.{2})[a-zA-Z0-9ÀÁÂÃÄÅÆÇÈÉÊËÌÍÎÏÐÑÒÓÔÕÖØÙÚÛÜÝÞßàáâãäåæçèéêëìíîïðñòóôõöøùúûüýþÿ!#$%&\'/*/+///=/?/^_`{|}~.-]*@[a-zA-Z0-9-]+(?!.*\\.{2})[a-zA-Z0-9-.]*\\.[a-zA-Z]{2,15}$', 'g'); // Regular Expression for Email 
+		if (!emailField.value.match(RegExp1)||emailField.value.charAt(emailField.value.indexOf('@')-1)=='.')
+		{
+			alert(MSG_GEN_EntValdEmlAddr);
+			emailField.focus();
+			return false;
+		}
+	}
+
+	if (!checkDBQuote(emailField))
+	{
+		return false;
+	}
+
+	return true;
+}
+
+function checkDBQuote(refControl){
+	if (refControl.value.indexOf('"') != -1) {
+		alert(MSG_GEN_PlsRmDblQut);
+		refControl.focus();
+		return false;
+	}
+	else
+		return true;
+
+}
+function isChecked(refCtrl)
+{
+	if(refCtrl.checked == true) 
+	{
+		return true;
+	}
+	else
+	{	
+		if (refCtrl.length >0)
+		{
+			for(var i=0;i<refCtrl.length;i++){
+				if(refCtrl[i].checked)
+					return true;	
+			}
+		}
+		else
+		{
+			return false;
+		}
+	}
+	return false;
+}
+function validUploadFile(refControl){
+var defFileTypes = new Array("doc","rtf","txt");
+var strCompare = new String(validUploadFile.arguments[1]);
+var arrExtn = new Array();
+strCompare = strCompare.toLowerCase();
+	if (!hasValue(refControl.value)){
+		return false;
+		}
+	if (!checkDBQuote(refControl)){
+		return false;
+		}
+	if (validUploadFile.arguments.length > 1){
+		if 	(strCompare.indexOf(",") != -1){
+			arrExtn = strCompare.split(",");
+		}
+		else
+		{
+			arrExtn[0] =  strCompare;
+		}
+//		return compareExtn(refControl,arrExtn);
+		}	
+	else	{
+		arrExtn = defFileTypes;
+//		return compareExtn(refControl,arrExtn);
+		}
+		return compareExtn(refControl,arrExtn);
+}
+function compareExtn(refControl,arrExtn){
+	var strFile = new String(refControl.value);
+	var intBegPos,intEndPos;
+	
+	strFile = strFile.toLowerCase();
+	for (var i=0;i < arrExtn.length ;i++ ){
+		intBegPos = strFile.length - arrExtn[i].length;
+		intEndPos =  strFile.length;
+		if ("." + strFile.substring(intBegPos ,intEndPos) == ("." + arrExtn[i] )){
+			return true;
+		}
+	}
+	return false;
+}
+
+function XmlEncode(sText) {
+    var intTextlength = 0;
+    var strOneChar = "";
+    var strNewText = "";
+    
+    intTextlength = sText.length;
+    
+    for (var i=0;i < intTextlength; i++)
+		 {strOneChar = sText.charAt(i);
+                   if (sText.charAt(i) == "&")
+		     strOneChar = "&amp;";
+		   if (sText.charAt(i) == "<")
+   			strOneChar = "&lt;";
+ 		   if (sText.charAt(i) == ">")
+  			strOneChar = "&gt;";
+		   if (sText.charAt(i) == '"')
+  			strOneChar = "&quot;";
+//		   if (sText.charAt(i) == "'")
+//			strOneChar = "&apos;";	
+
+		   strNewText = strNewText + strOneChar;
+		 }
+    
+    //sText = sText.replace("&", "&amp;")
+    //sText = sText.replace("<", "&lt;")
+    //sText = sText.replace(">", "&gt;")
+    //sText = sText.replace("'", "&apos;")
+    
+    return strNewText;
+}
+
+// Function to determine if value is in acceptable range for this application.
+function inRange(inputStr, min, max){
+   var num = parseInt(inputStr, 10);
+   if (num < min || num > max){
+      return false;
+   }
+   return true;
+}
+
+// Added by RamS for Date Handling //
+function formatDateValuesStoreAndValidate(frmToCheck)
+{
+	var lngIdx;
+	var lngControlCount;
+	var elements;
+	var strCtrlName;
+	var strQuestionId;
+	var dtCtrl;
+	var quesCtrl;
+	var strTemp;
+	var strJobId ="empty";
+	var strFromattedDate;
+	var formName = "document." + frmToCheck.name;	
+	elements = frmToCheck.elements;
+			
+	lngControlCount = elements.length;
+	
+	for (lngIdx = 0; lngIdx < lngControlCount; lngIdx++)
+	{
+		strJobId= "" ;
+		strCtrlName = elements[lngIdx].name;
+
+		if (typeof(strCtrlName) != 'undefined' && (strCtrlName.indexOf("Question_") != -1 || (strCtrlName.indexOf("Question") != -1 && strCtrlName.indexOf("_") != -1)))
+		{
+			if (strCtrlName.indexOf("|") != -1)
+			{
+				strTemp = strCtrlName.split("|");
+				strCtrlName = strTemp[0];
+				strJobId = "|" + strTemp[1];
+			}
+			/*36727 - JSQ dates are not being captured
+			adding in a check for $ instead of |*/
+			if (strCtrlName.indexOf("$") != -1)
+			{
+				strTemp = strCtrlName.split("$");
+				strCtrlName = strTemp[0];
+				strJobId = "$" + strTemp[1];
+			}
+			strTemp = strCtrlName.split("_");
+			if (strTemp[0] != "Question")
+			{
+				strQuestionId = strTemp[0].substring(8);
+			}
+			else 
+			{
+				strQuestionId = strTemp[1];
+			}
+
+			dtCtrl = eval(formName + ".Date_" + strQuestionId + "_Y" + strJobId);
+			
+			//TD41839 - isNaN function is having problems with the variable in NS6.2
+		   	//if ((dtCtrl) && isNaN(dtCtrl))
+			if ((dtCtrl) && (eval(formName + ".Date_" + strQuestionId + "_Y" + strJobId))) // Do only if the question is of type Date
+			{
+				quesCtrl = elements[lngIdx];				
+				strFromattedDate = dtCtrl.options[dtCtrl.selectedIndex].value;
+						
+				dtCtrl = eval(formName + ".Date_" + strQuestionId + "_M" + strJobId);
+				strFromattedDate = strFromattedDate + "-" + dtCtrl.options[dtCtrl.selectedIndex].value;
+
+				dtCtrl = eval(formName + ".Date_" + strQuestionId + "_D" + strJobId);
+				strFromattedDate = strFromattedDate + "-" + dtCtrl.options[dtCtrl.selectedIndex].value;
+						
+				if (validateFormattedDate(strFromattedDate))
+				{
+					if (strFromattedDate == '--') strFromattedDate = '';
+					quesCtrl.value = strFromattedDate; 
+				}
+				else
+				{
+					
+					alert(MSG_GEN_PlsEntValdDate);
+
+					dtCtrl.focus();
+					return false;
+				}
+			}					
+		}
+
+	}
+			
+	return true;
+}
+		
+function validateFormattedDate(strFormattedDate, bFutureDateCheck)
+{
+	var lngDay;
+	var lngMonth;
+	var lngYear;
+	var strTemp;
+	
+	strTemp = strFormattedDate.split("-");
+	
+	if(strFormattedDate == "--") return true;
+	if (strTemp.length != 3) return false;
+	if (strTemp[0] == '' && strTemp[1] == '' && strTemp[2] == '') return true;
+	if (strTemp[0] == '' || strTemp[1] == '' || strTemp[2] == '') return false;
+			
+	lngYear = strTemp[0];
+	switch(strTemp[1])
+	{
+		case 'Jan': lngMonth = 1; break;
+		case 'Feb': lngMonth = 2; break;
+		case 'Mar': lngMonth = 3; break;
+		case 'Apr': lngMonth = 4; break;
+		case 'May': lngMonth = 5; break;
+		case 'Jun': lngMonth = 6; break;
+		case 'Jul': lngMonth = 7; break;
+		case 'Aug': lngMonth = 8; break;
+		case 'Sep': lngMonth = 9; break;
+		case 'Oct': lngMonth = 10; break;
+		case 'Nov': lngMonth = 11; break;
+		case 'Dec': lngMonth = 12; break;
+		case '1': lngMonth = 1; break;
+		case '2': lngMonth = 2; break;
+		case '3': lngMonth = 3; break;
+		case '4': lngMonth = 4; break;
+		case '5': lngMonth = 5; break;
+		case '6': lngMonth = 6; break;
+		case '7': lngMonth = 7; break;
+		case '8': lngMonth = 8; break;
+		case '9': lngMonth = 9; break;
+		case '10': lngMonth = 10; break;
+		case '11': lngMonth = 11; break;
+		case '12': lngMonth = 12; break;
+		default: return false;
+	}
+	lngDay = strTemp[2];
+	switch(lngMonth)
+	{
+		case 1:
+		case 3:
+		case 5:
+		case 7:
+		case 8:
+		case 10:
+		case 12:
+			break;
+		case 4:
+		case 6:
+		case 9:
+		case 11:
+			if (lngDay == 31) return false;
+			break;
+		case 2:
+			if (lngDay > 29) return false;
+			if (lngDay <= 28) break;
+			if (!(lngDay == '29' && lngYear % 4 == 0 && (lngYear % 100 != 0 || lngYear % 400 == 0))) return false;
+			break;
+		default:
+			return false;
+	}
+	//TD#105467
+	if (typeof(bFutureDateCheck) != 'undefined')
+	if (bFutureDateCheck== true)
+	{
+		var today = new Date;
+		var selectedDate = new Date;
+		selectedDate .setDate(Number(lngDay));
+		selectedDate .setMonth(Number(lngMonth) - 1); // January = 0
+		selectedDate .setFullYear(Number(lngYear)); 		
+		if(selectedDate > today)
+			return false;
+		else
+			return true;
+	}
+
+			
+	return true;
+}
+// Added by RamS for Date Handling - End //
+
+// Added by RamS for Blank value checking //
+//LDP:074 QB added new first parameter 
+function alertIfBlank(qId,ctrlName, strCtrlType, strCtrlText, strDateCtrlPrefix)
+{
+	var strCtrlTypeFormatted;
+	var iIdx;
+	var iCount;
+	var bBlank;
+	var dtCtrl;
+        var Msg; 
+  	var checkedCount;
+	var iCtrarray;
+	var iCtrarray2;
+	var iCtrarray3;
+	var actualControlName;
+		
+	//debugger;
+		
+	strCtrlTypeFormatted = strCtrlType.toUpperCase();
+	
+	//LDP:074 QB starts If this control has questionBranch_hide class present then don't do the validation..	
+	if(strCtrlTypeFormatted == 'RADIO' || strCtrlTypeFormatted == 'CHECKBOX' || strCtrlTypeFormatted == 'GRID')
+	{	       
+	   	if (ctrlName.length ) 
+	   		iCount = ctrlName.length;
+		else 
+			iCount=1;
+
+		if (iCount==1)
+		{	
+			//For form layout for REQUIRED FIELDS this is coming as empty/undefined then don't do valdidation
+			if (ctrlName.id == null || ctrlName.id == 'undefined' || ctrlName.id == "" )
+			{
+				//Do one more check for required fields...
+				if (ValidateRequiredControlsforQB(actualControlName,strDateCtrlPrefix))
+					return true;
+			}
+			else
+			{		
+				actualControlName = ctrlName.id; 		
+				if (ValidateControlsforQB(actualControlName ))
+					return true;
+			}
+		}
+		else
+		{
+			//For form layout for REQUIRED FIELDS this is coming as empty/undefined then don't do valdidation
+			if (ctrlName[iCount - 1].id == null || ctrlName[iCount - 1].id == 'undefined' || ctrlName[iCount - 1].id == "")
+			{
+					//Do one more check for required fields...
+				if (ValidateRequiredControlsforQB(actualControlName,strDateCtrlPrefix))
+					return true;
+			}
+			else
+			{
+				actualControlName = ctrlName[iCount - 1].id;
+				if (ValidateControlsforQB(actualControlName))
+					return true;			
+			}
+		}
+		
+	
+	}
+	else
+	{
+	    if(ctrlName != null && strCtrlTypeFormatted != 'AUTO-FILL' && strCtrlTypeFormatted != 'LABEL')
+	    {
+			//For form layout for REQUIRED FIELDS this is coming as empty/undefined then don't do valdidation
+			if (ctrlName.id == null || ctrlName.id == 'undefined' || ctrlName.id == "")
+			{
+				//Do one more check for required fields...
+				if (ValidateRequiredControlsforQB(actualControlName,strDateCtrlPrefix))
+					return true;
+			}
+			else
+			{	
+				actualControlName = ctrlName.id;
+	    		if (ValidateControlsforQB(actualControlName))
+					return true;
+			}
+	    }
+	}
+		
+	
+	bBlank = false;
+	
+	switch(strCtrlTypeFormatted)
+	{
+		case 'MULTI-SELECT':
+			iCount = ctrlName.length; 
+			for(iIdx = 0; iIdx < iCount; iIdx++)
+				if (ctrlName[iIdx].selected == true)break;
+			if (iIdx == iCount) bBlank = true;			
+			break;
+		case 'SINGLE-SELECT':
+			if (ctrlName.selectedIndex < 1) bBlank = true;
+			break;
+		case 'SCALESELECT':
+			if (ctrlName.value.toUpperCase().trim() == '') bBlank = true;
+			iCtrarray=ctrlName.value.toUpperCase().trim().split(',');
+			iCount = iCtrarray.length;
+			if (iCount == 0) bBlank = true;
+			for(iIdx = 0; iIdx < iCount; iIdx++)
+				iCtrarray2=iCtrarray[0].split('%%%');
+				iCtrarray3=iCtrarray2[0].split('&=');
+				if (iCtrarray3[1]=='|0|') bBlank = true;
+			break;
+		case 'RADIO':
+		case 'CHECKBOX':
+		case 'GRID':
+		// TD 17005 Madhava -- Handling for only one checkbox 
+			if (ctrlName)
+			{
+				checkedCount = 0;
+				if (ctrlName.length ) {iCount = ctrlName.length;} 
+				else {iCount=1;}			
+				for(iIdx = 0; iIdx < iCount; iIdx++)
+				if (iCount==1)
+				{
+					if (ctrlName.checked ==  true){checkedCount=checkedCount+1;break;}
+				}
+				else
+				{
+					if (ctrlName[iIdx].checked == true){checkedCount=checkedCount+1;break;}
+				}
+				if (checkedCount==0) bBlank = true;	
+				if (iCount>1){ctrlName = ctrlName[0];		}
+			}	
+			break;
+		case 'EMAIL':
+		case 'SSN':
+		case 'TEXT':
+		case 'NUMERIC':
+		case 'TEXTAREA':
+			if (ctrlName.value == '') bBlank = true;
+			if (ctrlName.value.replace(/ /g, "").length == 0) bBlank = true;
+			if (ctrlName.value.replace(new RegExp('\r\n', 'g' ), '').length == 0) bBlank = true;
+			if (ctrlName.value.replace(new RegExp('\r', 'g' ), '').length == 0) bBlank = true;
+			if (ctrlName.value.replace(new RegExp('\n', 'g' ), '').length == 0) bBlank = true;			
+			break;
+		case 'DATE':
+			var bSelYear = false;
+			var bSelMon =false;
+			var bSelDay = false;
+			var strTemp;
+			var strJobId ="";
+			if (strDateCtrlPrefix.indexOf("$") != -1)
+			{		
+				strTemp = strDateCtrlPrefix.split("$");
+				strDateCtrlPrefix= strTemp[0];
+				strJobId = "$" + strTemp[1];				
+			}
+			dtCtrl = eval(strDateCtrlPrefix + "Y" + strJobId);
+			if (dtCtrl.selectedIndex == 0) bSelYear = true;
+			
+			dtCtrl = eval(strDateCtrlPrefix + "M" + strJobId);
+			if (dtCtrl.selectedIndex == 0) bSelMon = true;
+
+			dtCtrl = eval(strDateCtrlPrefix + "D" + strJobId);
+			if (dtCtrl.selectedIndex == 0) bSelDay = true;
+			if (bSelDay == true || bSelMon == true || bSelYear == true) bBlank= true;
+			ctrlName = dtCtrl;
+			break;
+	}
+	//LDP:074 QB added this IF condition as if the require field is child and hidden controlname is coming as blank
+	if (bBlank )
+	{
+        Msg = ReplaceInString(MSG_GEN_EnterVal, "|QUESTION|",  "\"" + DecodeQuotes(strCtrlText).trim() + "\"");
+        alert(Msg);
+        //added the if condition to check wether the question is visible or not in profile detail page
+        if(document.getElementById("quemainrow_"+qId) != undefined)
+        {
+            if (document.getElementById("quemainrow_" + qId).parentNode.parentNode.parentNode.style.display == "none") {
+                return false;
+            }
+            else if (strCtrlTypeFormatted != 'SCALESELECT') {
+                ctrlName.focus();
+                return false;
+            }
+        }
+	   else	if (strCtrlTypeFormatted != 'SCALESELECT') ctrlName.focus();
+		return false;
+	}
+	
+	return true;
+}
+// Added by RamS for Blank value checking - End //
+
+// Added by RamS //
+function isValidName(strName)
+{
+	var strInValidChars = "!\"#$%&*/:;?@[\]_{|}~+<=>0123456789";	
+	var iIdx = 0;
+	for (; iIdx < strName.length; iIdx++) 
+	{
+		if (strInValidChars.indexOf(strName.charAt(iIdx), 0) != -1) return false;
+	}
+	return true;
+}
+
+function isValidNumber(strNumber)
+{
+	var strValidChars = "0123456789";
+	var iIdx = 0;
+
+	for (; iIdx < strNumber.length; iIdx++) 
+	{
+		if (strValidChars.indexOf(strNumber.charAt(iIdx), 0) == -1) return false;
+	}
+	
+	return true;
+}
+
+function isValidPhoneNumber(strNumber)
+{	//Added "/" character by RamS TD#30075
+	var strValidChars = "0123456789- X()+./";
+	var iIdx = 0;
+
+	if ((strNumber.length < 5) && (strNumber.length != 0)) return false;
+	for (; iIdx < strNumber.length; iIdx++) 
+	{
+		if (strValidChars.indexOf(strNumber.charAt(iIdx), 0) == -1) return false;
+	}
+	
+	return true;
+}
+
+function isValidWebAddress(strAddress)
+{
+	if (strAddress.length == 0) return true;
+	if (strAddress.indexOf("http://") == -1) 
+	{
+		if (strAddress.indexOf("https://") == -1) return false;
+	}
+	if (strAddress.indexOf(".") == -1) return false;
+	
+	return true;
+}
+
+function isValidYear(strYear)
+{
+	var strValidChars = "0123456789";
+	var iIdx = 0;
+
+	if ((strYear.length != 4) && (strYear.length != 0)) return false;
+	for (; iIdx < strYear.length; iIdx++)
+	{
+		if (strValidChars.indexOf(strYear.charAt(iIdx), 0) == -1) return false;
+	}
+	
+	return true;
+}
+
+function ReplaceInString(str, strFind, strReplace) 
+{
+   // Replaces strFind in str with strReplace and returns replaced text string
+   // 04-04-2003 Venkat	
+
+   var returnStr = str;
+   var start = returnStr.indexOf(strFind);
+   while (start>=0)
+   {
+     returnStr = returnStr.substring(0,start) + strReplace + returnStr.substring(start+strFind.length,returnStr.length);
+     start = returnStr.indexOf(strFind,start+strReplace.length);
+   }
+   return returnStr;
+}
+// Added by RamS - End //
+
+//Added by B.M.Hariharan
+
+function formatTextBoxValuesStoreAndValidate(frmToCheck)
+{	
+	var lngIdx;
+	var lngControlCount;
+	var strCtrlName ;
+	var strTypeName;
+	
+	elements = frmToCheck.elements;
+		
+	lngControlCount = elements.length;
+	for (lngIdx = 0; lngIdx < lngControlCount; lngIdx++)
+	{
+		strCtrlName = elements[lngIdx].name;
+		strTypeName = elements[lngIdx].type;
+		if (typeof(strCtrlName) != 'undefined' && (strCtrlName.indexOf("Question_") != -1 || (strCtrlName.indexOf("Question") != -1 && strCtrlName.indexOf("_") != -1)))
+		{
+			
+				if(elements[lngIdx].type == "text" || elements[lngIdx].type == "textarea")
+				{					
+					if (strCtrlName.toUpperCase().indexOf("CODEQUESTION_YES") !=-1) 
+					{
+						elements[lngIdx].value = elements[lngIdx].value.replace(/\//g,",");
+						
+					}
+					
+					//we will do this on the other side so this ugly formatting goes away
+					//elements[lngIdx].value = elements[lngIdx].value.replace(/,/g,"\=#|");
+					
+					
+					
+				}
+		}
+	}	
+	
+}
+
+//Added by B.M.Hariharan - END
+
+
+//Added by Hari to Trim blank spaces
+function checkBlank(ctrlName,strAlertMsg)
+{
+  var bBlank;
+  bBlank = false;
+
+  if (ctrlName.value == '') bBlank = true;
+  if (ctrlName.value.replace(/ /g, "").length == 0) bBlank = true;     
+  if (bBlank)
+  {
+    alert (strAlertMsg);
+    ctrlName.focus();
+    return false;
+  }
+  return true;
+}
+// End
+
+
+function containsNonPrintableChars(strPassedVal)
+{
+	return false; // Please remove this line when this functionality required..
+	var iIdx, iCount;
+	var iChar;
+	var cChar;
+	var strNonPrintableList = "??????•???????¤????¶§??????????";
+	
+	for (iIdx = 0, iCount = strPassedVal.length; iIdx < iCount; iIdx++)
+	{
+		cChar = strPassedVal.charAt(iIdx);
+		if (strNonPrintableList.indexOf(cChar) >= 0) break;
+	}
+	
+	if (iIdx != iCount) return true;
+	return false;
+}
+//Added by RamS for TD#20492 to validate year in Addschool and Addjob pages
+function validateYear(startYear,endYear)
+{
+	if (startYear > endYear)
+	{
+		return false;
+	}
+	return true;
+}
+
+//Added By B.M.Hariharan -17FEB2003 - TD 21423
+
+function isValidSSN(strSSNField)
+{
+	
+        var strValidChars = "0123456789-";
+	var strHyphen = "-";
+	var iIdx = 0;
+	var lCount=0;
+	var strSSN = strSSNField.value;
+	
+        for (; iIdx < strSSN.length; iIdx++) 
+	{
+	   if (strValidChars.indexOf(strSSN.charAt(iIdx), 0) == -1) 
+            {
+	      	alert(MSG_GEN_PlsEntVldSSN);
+	      	strSSNField.focus();
+		return;
+	    }
+		
+            if (strHyphen.indexOf(strSSN.charAt(iIdx), 0) >-1) lCount=lCount + 1;
+	    
+	}
+	
+	if (lCount !=2)
+	 {
+		alert(MSG_GEN_PlsEntVldSSN);
+		strSSNField.focus();
+		return;	
+	}
+
+	
+	if ((strSSN.length != 11) ) 
+	{
+		
+		alert(MSG_GEN_SSNFormat);
+		strSSNField.focus();
+		return;
+	}
+	
+	if ((strSSN.charAt(3) != "-") || (strSSN.charAt(6) != "-"))
+	{
+	    alert(MSG_GEN_PlsEntVldSSN);
+	    strSSNField.focus();
+	    return;
+	}
+	
+	
+	return true;
+	
+}
+//Added By B.M.Hariharan -17FEB2003-END
+
+
+//Added By B.M.Hariharan -10MAY2003 - TD 29479
+
+function isNumeric(numField)
+{	
+	var RegExp1 = new RegExp('^[-]?([0-9]{1,3},([0-9]{3},)*[0-9]{3}|[0-9]+)(.[0-9]*)?$', 'g'); 	
+	if (!numField.value.match(RegExp1))
+  	{
+		alert(MSG_GEN_PlsEntVldNumber);
+        	numField.focus();
+		return;
+	}
+
+	return true;
+	
+}
+//Added By B.M.Hariharan -10MAY2003 ,TD 29479-END
+
+// TD 23997 -  Date Handling in Search page - Venkat //
+function formatSearchDateValuesStoreAndValidate(frmToCheck)
+{
+	var lngIdx;
+	var lngControlCount;
+	var elements;
+	var strCtrlName;
+	var strQuestionId;
+	var dtCtrl;
+	var quesCtrl;
+	var strTemp;
+	var strJobId ="empty";
+	var strFromattedDate;
+	var lngCtrlIdx;
+	var strFromDate;
+	var strToDate;
+
+	elements = frmToCheck.elements;
+			
+	lngControlCount = elements.length;
+
+	for (lngIdx = 0; lngIdx < lngControlCount; lngIdx++)
+	{
+		strJobId= "" ;
+		strCtrlName = elements[lngIdx].name;
+		if (typeof(strCtrlName) != 'undefined' && (strCtrlName.indexOf("Question_") != -1 || (strCtrlName.indexOf("Question") != -1 && strCtrlName.indexOf("_") != -1)))
+		{
+			if (strCtrlName.indexOf("|") != -1)
+			{
+				strTemp = strCtrlName.split("|");
+				strCtrlName = strTemp[0];
+				strJobId = "|" + strTemp[1];
+			}
+			strTemp = strCtrlName.split("_");
+			if (strTemp[0] != "Question")
+			{
+				strQuestionId = strTemp[0].substring(8);
+			}
+			else 
+			{
+				strQuestionId = strTemp[1];
+			}
+
+			dtCtrl = eval("frmToCheck.Date_" + strQuestionId + "_Y" + strJobId);
+
+		   	//TD41839 - isNaN function is having problems with the variable in NS6.2
+		   	//if ((dtCtrl) && isNaN(dtCtrl))
+			if ((dtCtrl) && (eval("frmToCheck.Date_" + strQuestionId + "_Y" + strJobId))) // Do only if the question is of type Date
+			{
+			  quesCtrl = elements[lngIdx];
+			  quesCtrl.value = '';
+
+			  for (lngCtrlIdx = 0; lngCtrlIdx < dtCtrl.length ; lngCtrlIdx++)
+			  {
+				dtCtrl = eval("frmToCheck.Date_" + strQuestionId + "_Y" + strJobId);
+				strFromattedDate = dtCtrl[lngCtrlIdx].options[dtCtrl[lngCtrlIdx].selectedIndex].value;
+						
+				dtCtrl = eval("frmToCheck.Date_" + strQuestionId + "_M" + strJobId);
+				
+				strFromattedDate = strFromattedDate + "-" + dtCtrl[lngCtrlIdx].options[dtCtrl[lngCtrlIdx].selectedIndex].value;
+
+				dtCtrl = eval("frmToCheck.Date_" + strQuestionId + "_D" + strJobId);
+
+				strFromattedDate = strFromattedDate + "-" + dtCtrl[lngCtrlIdx].options[dtCtrl[lngCtrlIdx].selectedIndex].value;
+						
+				if (validateFormattedDate(strFromattedDate))
+				{
+					if (strFromattedDate == '--') 
+						strFromattedDate = '';
+						
+					//Hari - validation for Date FROM < TO if FROM,TO <> "" 
+					if ( strFromattedDate != '')
+ 					  {
+					  if (lngCtrlIdx == 0 )
+						{
+					  	 strFromDate = strFromattedDate;
+ 						 strFromDate = getUTC(strFromDate); 
+						}	
+					  else
+						{
+					  	 strToDate = strFromattedDate;
+ 						 strToDate = getUTC(strToDate);
+						}
+					    if(strFromDate > strToDate)
+						{
+						  alert(MSG_GEN_FromToDate);
+						  dtCtrl[0].focus();	
+						  return false;	
+						}		
+					  }
+
+					  if (quesCtrl.value == '') 
+					  {
+						quesCtrl.value = " AnswerName&=|" + strFromattedDate + "=X|%%%AnswerValue&=|" + strFromattedDate + "=X|%%%GDEAnswerValue&=|=X|???,";
+					  }
+					  else 
+					  {
+						quesCtrl.value = quesCtrl.value + " " +" AnswerName&=|" + strFromattedDate + "=X|%%%AnswerValue&=|" + strFromattedDate + "=X|%%%GDEAnswerValue&=|=X|???";
+					  }					
+					 
+				}
+				else
+				{
+					
+					alert(MSG_GEN_PlsEntValdDate);
+
+					dtCtrl[lngCtrlIdx].focus();
+					return false;
+				}
+			   }
+			}					
+
+		}
+
+	}
+	
+		
+	return true;
+}
+
+function passwdCheck(passwdField)
+{
+  var spaceChars = " ";
+
+  var strPasswdText;
+
+  strPasswdText= passwdField.value;
+
+  if (strPasswdText.indexOf(spaceChars,0) > -1)
+	 {
+	 alert(MSG_GEN_EnterValidPassword);
+         passwdField.focus();
+         return false;
+      	}
+  
+  var RegExp1 = new RegExp('^[\u0020-\u007e\u00a0-\uffff\s]+$', 'g'); 
+  if (!passwdField.value.match(RegExp1))
+  	{
+	alert(MSG_GEN_EnterValidPassword);
+        passwdField.focus();
+        return false;
+	}
+  
+ return true;
+
+}
+
+
+
+//Returns the number of milliseconds for given Date String since January 1, 1970, 00:00:00, //Universal Coordinated Time (GMT). Takes Date string parameter in the format YYYY-MMM-DD. //Calculates an year Offset based on 1900, Converts the month name string in the format MMM //e.g., apr into equivalent month number. Fits that month number into a 0-11 format. 
+//Finally, uses UTC method of date object and returns.
+//Venkat 04-15-2003 for TD 23997
+function getUTC(strDate)
+{
+
+  var lngMonth;	
+  var strMonthName;
+  var lngYear;
+  
+  var arrDt = strDate.split("-");
+ 
+  lngYear = arrDt[0];
+  lngYear = lngYear - 1900 ; //Date Offset
+
+  strMonthName = arrDt[1]; 
+
+  switch(strMonthName)
+  {
+	case 'Jan': lngMonth = 1; break;
+	case 'Feb': lngMonth = 2; break;
+	case 'Mar': lngMonth = 3; break;
+	case 'Apr': lngMonth = 4; break;
+	case 'May': lngMonth = 5; break;
+	case 'Jun': lngMonth = 6; break;
+	case 'Jul': lngMonth = 7; break;
+	case 'Aug': lngMonth = 8; break;
+	case 'Sep': lngMonth = 9; break;
+	case 'Oct': lngMonth = 10; break;
+	case 'Nov': lngMonth = 11; break;
+	case 'Dec': lngMonth = 12; break;
+	case '1': lngMonth = 1; break;
+	case '2': lngMonth = 2; break;
+	case '3': lngMonth = 3; break;
+	case '4': lngMonth = 4; break;
+	case '5': lngMonth = 5; break;
+	case '6': lngMonth = 6; break;
+	case '7': lngMonth = 7; break;
+	case '8': lngMonth = 8; break;
+	case '9': lngMonth = 9; break;
+	case '10': lngMonth = 10; break;
+	case '11': lngMonth = 11; break;
+	case '12': lngMonth = 12; break;
+	default: return false;
+   }
+   lngMonth = lngMonth - 1;	
+	
+   return (Date.UTC(lngYear , lngMonth , arrDt[2]));
+}
+
+
+
+
+// Added by WMF for Numeric Field Range checking //
+//LDP:074 QB Added one more new first parameter
+function alertIfOutOfRange(qId,ctrlName, strCtrlText, strMinValue, strMaxValue)
+{
+
+	var bOutOfRange;	
+	var num;
+	bOutOfRange = false;
+	
+	//LDP:074 QB starts If this control has questionBranch_hide class present then don't do the validation..	
+	//IF THIS IS FUNCTION IS CALLED FROM ANSWER QUESTIONS PAGE as we have different naming conventions for div tag
+	//Build the control name
+	//Remove all the hidden children from the DOM before submit - For Question Branching.
+	if (ValidateControlsforQB(ctrlName.id))
+		return true;
+	//LDP:074 QB Ends
+		
+	if (!isValidNumber(ctrlName.value))
+	{
+        alert(MSG_GEN_PlsEntVldNumber);
+		ctrlName.focus();
+		return false;
+	}
+	
+	if ( strMinValue == strMaxValue )
+	{
+		if ( strMinValue == 0 )
+		{
+			return true;
+		}	
+		
+	}
+	
+	num = parseInt(ctrlName.value,10);
+
+   
+	if (num  < strMinValue || num  > strMaxValue)
+   	{
+      		bOutOfRange = true;
+   	}
+	
+	if (bOutOfRange)
+	{
+        Msg = ReplaceInString(MSG_GEN_EnterValRange, "|QUESTION|",  "\"" + strCtrlText +  "\"");
+        Msg = ReplaceInString(Msg, "|MIN|", strMinValue );
+        Msg = ReplaceInString(Msg, "|MAX|", strMaxValue );
+        alert(Msg);
+	ctrlName.focus();
+		return false;
+	}
+	
+	return true;
+}
+
+//  Added by WMF for Numeric Field Range checking - End //
+
+
+//  Added by ADK for decoding XML on the client - Begin //
+
+function XmlDecode(sText) {
+    sText = sText.replace(/\&amp;/g,"&");
+    sText = sText.replace(/\&lt;/g,"<");
+    sText = sText.replace(/\&gt;/g,">");
+    //sText = sText.replace(/\&apos;/g,"'");
+    sText = sText.replace(/\&quot;/g,'"');
+    return sText;
+}
+
+//  Added by ADK for decoding XML on the client - End //
+
+
+// Added by WMF 11/05/2003--to read query string values from client side //
+//
+// QueryString
+//
+
+function QueryString(key)
+{
+	var value = null;
+	for (var i=0;i<QueryString.keys.length;i++)
+	{
+		if (QueryString.keys[i]==key)
+		{
+			value = QueryString.values[i];
+			break;
+		}
+	}
+	return value;
+}
+
+QueryString.keys = new Array();
+QueryString.values = new Array();
+
+function QueryString_Parse()
+{
+	var query = window.location.search.substring(1);
+	var pairs = query.split("&");
+	
+	for (var i=0;i<pairs.length;i++)
+	{
+		var pos = pairs[i].indexOf('=');
+		if (pos >= 0)
+		{
+			var argname = pairs[i].substring(0,pos);
+			var value = pairs[i].substring(pos+1);
+			QueryString.keys[QueryString.keys.length] = argname;
+			QueryString.values[QueryString.values.length] = value;		
+		}
+	}
+
+}
+
+QueryString_Parse();
+
+
+		function getCookie(cookieName)
+		{
+		 	var cookieValue =	  null;
+			if(document.cookie)	   //only if exists
+			{
+		       	var arr = 		  document.cookie.split((escape(cookieName) + '=')); 
+		       	if(2 <= arr.length)
+		       	{
+		           	var arr2 = 	   arr[1].split(';');
+		       		cookieValue  = 	   unescape(arr2[0]);
+		       	}
+			}
+			return cookieValue;
+		}		
+
+
+function getLocaleId(strSiteId,arrSiteLocaleLangList)
+{
+	var arr1 = arrSiteLocaleLangList.split('||');				
+	var strTempSiteId;
+	var arr2;
+	var arr3;
+
+	arr2 = arr1[0].split(',');
+	arr3 = arr1[2].split(',');
+	for (var lIdx = 0; lIdx < arr2.length; lIdx++)					
+	{
+		if (strSiteId == arr2[lIdx])
+		{
+			return arr3[lIdx];
+		}
+	}
+}	
+
+//  Added by ADK for trimming whitespace - Begin //
+
+function strtrim() 
+{
+return this.replace(/^\s+/,'').replace(/\s+$/,'');
+}
+
+String.prototype.trim = strtrim;
+
+//  Added by ADK for trimming whitespace - End //
+
+function DecodeQuotes(sText) {
+    sText = sText.replace(/\&quot;/g,'"');
+    
+    return sText;
+}
+
+function DecodeSingleQuotes(sText) {
+    sText = sText.replace(/\&apos;/g,'"');
+    
+    return sText;
+}
+
+function EncodeComma(sText) {
+    var intTextlength = 0;
+    var strOneChar = "";
+    var strNewText = "";
+    
+    intTextlength = sText.length;
+    
+    for (var i=0;i < intTextlength; i++)
+		 {strOneChar = sText.charAt(i);
+                   if (sText.charAt(i) == ",")
+		     strOneChar = "&comma;";
+
+		   strNewText = strNewText + strOneChar;
+		 }
+    return strNewText;
+}
+
+function userNameCheck(usernameField) {
+    if (usernameField.value.length > 100)
+    {
+	alert(MSG_GEN_UserNameLength);
+        usernameField.focus();
+        return false;
+    }
+
+    if (usernameField.value.indexOf(' ') > 0)
+    {
+	alert(MSG_GEN_UserNameSpaces);
+        usernameField.focus();
+        return false;
+    }
+    var RegExp1 = new RegExp('^[\u0021-\u003b=\u003f-\u007e\u009f-\uffff\s]+$', 'g'); // Regular Expression for UserName	
+    if (!usernameField.value.match(RegExp1))
+    {
+	alert(MSG_GEN_UserNameInvalidChars);
+        usernameField.focus();
+        return false;
+    }
+
+    
+    return true;
+}
+
+function XmlEncodeForEduExp(sText) {
+    var intTextlength = 0;
+    var strOneChar = "";
+    var strNewText = "";
+    
+    intTextlength = sText.length;
+    
+    for (var i=0;i < intTextlength; i++)
+		 {strOneChar = sText.charAt(i);
+                   if (sText.charAt(i) == "&")
+		     strOneChar = "__AMP__";
+		   if (sText.charAt(i) == "<")
+   			strOneChar = "__LT__";
+ 		   if (sText.charAt(i) == ">")
+  			strOneChar = "__GT__";
+		   if (sText.charAt(i) == '"')
+  			strOneChar = "__QUOT__";
+		   if (sText.charAt(i) == "'")
+  			strOneChar = "__APOS__";	
+
+		   strNewText = strNewText + strOneChar;
+		 }
+    return strNewText;
+}
+
+function XmlDecodeForEduExp(sText) {
+    var intTextlength = 0;
+    var strOneChar = "";
+    var strNewText = "";
+    
+    intTextlength = sText.length;
+
+    sText = sText.replace(/__AMP__/g,"&");
+    sText = sText.replace(/__LT__/g,"<");
+    sText = sText.replace(/__GT__/g,">");
+    sText = sText.replace(/__QUOT__/g,'"');
+    strNewText = sText.replace(/__APOS__/g,"'");
+   
+    return strNewText;
+}
+
+function emailCheckNew(emailField,switchTo)
+{
+	var bInValidEmail;
+	bInValidEmail = false;
+
+	if(emailField.value.replace(/ /g, "").length != 0)
+	{
+		
+		var RegExp1 = new RegExp('^[a-zA-Z0-9]+(?!.*\\.{2})[a-zA-Z0-9ÀÁÂÃÄÅÆÇÈÉÊËÌÍÎÏÐÑÒÓÔÕÖØÙÚÛÜÝÞßàáâãäåæçèéêëìíîïðñòóôõöøùúûüýþÿ!#$%&\'/*/+///=/?/^_`{|}~.-]*@[a-zA-Z0-9-]+(?!.*\\.{2})[a-zA-Z0-9-.]*\\.[a-zA-Z]{2,6}$', 'g'); // Regular Expression for Email 
+		if (!emailField.value.match(RegExp1)||emailField.value.charAt(emailField.value.indexOf('@')-1)=='.')
+		{
+			bInValidEmail = true;
+		}
+	}
+
+
+	if (!checkDBQuoteNew(emailField))
+	{
+		bInvalidEmail = true;
+	}
+	if ( bInValidEmail )
+	{
+		switchIt(document.getElementById(switchTo));
+		alert(MSG_GEN_EntValdEmlAddr); 		    
+		emailField.focus();
+		return false;
+	}
+		
+	return true;
+}
+
+// clear all field values
+function _ClearAllFields(formName,strJobInfo) 
+{
+	var calledFromReferralAttachForm;
+	var qtype;
+	var pname;
+	var calledFrom;
+	var currentpname = "";
+	
+
+	//only Referral Attach Form flow has Clear button and all other flow does not have that hence we need to clear all
+	// all QB child controls only for this flow..
+	if (formName == "frmLogin")
+	{
+		calledFromReferralAttachForm = "1";
+		calledFrom = "REFERRALATTACHFORM";
+	}
+	else if (formName == "frmApply")
+	{
+		calledFromReferralAnswerQuestions = "1";
+		calledFrom = "REFERRERANSQUESTIONS";	
+	}
+
+	//debugger;
+			
+	with (document.forms[formName]) 
+	{
+		var n;
+		for (n=0; n<elements.length; n++) 
+		{
+			if (elements[n].type != 'hidden' && elements[n].type != 'button')
+			{
+				//Get the question Id and calling from Atach Form RC flow then only get question Id
+				if (calledFromReferralAttachForm == "1" || calledFromReferralAnswerQuestions == "1" )
+				{	
+					qtype = elements[n].type;
+					pname = elements[n].name;
+					// For Date field this is coming as empty hence skip this and for radio and single select also skip this as it is coming as same name
+					//	for all checkboxes and radio buttons..
+					if (pname != "" && pname != currentpname)
+					{	
+						currentpname = pname;
+						ClearAllQBChilds(formName,qtype,pname,calledFrom,strJobInfo);
+					}
+					//Earlier code to clear the selected values
+					if (elements[n].type != 'radio' && elements[n].type != 'checkbox')
+					{
+						//LDP:074 this is existing bug..f date field is present and you select Clear it is giving error on submit
+						// from referral flow hence using this logic just to set the index to 0.
+						if (qtype.toUpperCase() == 'SELECT-ONE' && pname != "" )
+							elements[n].selectedIndex = 0;
+						else
+							elements[n].value = '';
+					}
+					else
+					{
+						if (elements[n].checked == true)
+							elements[n].checked = false;
+					}
+				}
+				else		//Original code.. just clear the values for all other flow
+				{
+					if (elements[n].type != 'radio' && elements[n].type != 'checkbox')
+					{
+						if (qtype.toUpperCase() == 'SELECT-ONE' && pname != "" )
+							elements[n].selectedIndex = 0;
+						else
+							elements[n].value = '';
+					}
+					else
+					{
+						if (elements[n].checked == true)
+							elements[n].checked = false;
+					}
+				}
+			}
+		}
+	}
+}
+
+function containsNonHTMLTag(strPassedVal)
+{
+    if (strPassedVal.indexOf("<") >= 0 || strPassedVal.indexOf(">") >=0) return true;
+    return false;
+}
+
+//RDP-413 following function is added for input validation of form fields 
+//LDP:074 QB Added one more new first parameter
+function alertIfInputValidationFails(qId,ctrlName, strCtrlText, strRegx)
+{
+	//if candidate is not entered any data, don't aplly validation logic. Exit from here
+	if(ctrlName.value == '' || ctrlName.value.replace(/ /g, "").length == 0)
+	{
+		return true;
+	}
+	var Msg;	
+	var valueToValidate = ctrlName.value;	
+	
+	//LDP:074 QB starts If this control has questionBranch_hide class present then don't do the validation..	
+	//IF THIS IS FUNCTION IS CALLED FROM ANSWER QUESTIONS PAGE as we have different naming conventions for div tag
+	//Build the control name
+	//Remove all the hidden children from the DOM before submit - For Question Branching.
+	if (ValidateControlsforQB(ctrlName.id))
+		return true;
+	//LDP:074 QB Ends
+		
+	var RegExp1 = new RegExp(strRegx);
+	//var RegExp1 = new RegExp('^[a-zA-Z]+$');	//only chars
+	//var RegExp1 = new RegExp('^[0-9]+$');  //only numbers
+	
+	if (valueToValidate.match(RegExp1) == null)
+	{	
+		Msg = ReplaceInString(MSG_InputValidationFail, "[QUESTION]",  "\"" + DecodeQuotes(strCtrlText) + "\"");
+		alert(Msg);
+		ctrlName.focus();
+		return false;
+	}
+	
+	return true;
+}	
+
+
+//LDP:054 changes Addition of new functions starts
+/*
+var request;
+var sBrowserInfo;
+
+function createRequest()
+{
+	try 
+	{
+		request = new XMLHttpRequest();
+		if (request.overrideMimeType)
+		{	
+			//108633 Changed code from text/html to text/xml to support the responsexml property of output.				
+			request.overrideMimeType('text/xml');
+		}
+		sBrowserInfo = "NonIE";
+	}
+	catch (trymicrosoft)
+	{
+		try
+		{
+			request = new ActiveXObject("Msxml2.XMLHTTP");
+			sBrowserInfo = "IE";
+		}
+		catch (othermicrosoft)
+		{
+			try
+			{
+				request = new ActiveXObject("Microsoft.XMLHTTP");
+				sBrowserInfo = "IE";
+			}
+			catch (failed)
+			{
+				request = false;
+			}
+		}
+	}
+}
+*/
+
+function getXmlDom(xmlStr)
+{
+	if(typeof ActiveXObject!='undefined'){
+		var xmlDom=new ActiveXObject("Microsoft.XMLDOM")
+		xmlDom.async="false"
+		xmlDom.loadXML(xmlStr);
+		return xmlDom;
+	}
+	else if(typeof DOMParser!='undefined'){		
+		var objDOMParser = new DOMParser();        
+		var xmlDom = objDOMParser.parseFromString(xmlStr, "text/xml");
+		return xmlDom;
+	}
+	else
+		return false;
+}
+
+
+// JavaScript Document - CREATE XMLHTTPRequest Object
+function getXMLHTTPObject() {
+  var xmlhttp;  
+	if(window.ActiveXObject){
+	  // First try Microsoft XMLHTTP object - Msxml2 type
+		try {
+		  xmlhttp = new ActiveXObject("Msxml2.XMLHTTP");
+		} catch (e) {
+			try {
+				xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
+			} catch (E) {
+				alert("Error attempting to create Microsoft.XMLHTTP Object: " + E);
+				xmlhttp = false;
+			}
+		}
+	}
+		  
+	// If the xmlhttp object has not been set - try non Microsoft-specific request first
+	if (!xmlhttp && typeof XMLHttpRequest != 'undefined') {
+		try {
+		  xmlhttp = new XMLHttpRequest();		  
+		} catch (e) {
+			alert("Error attempting to create XMLHttpRequest Object: " + e );
+		  xmlhttp = false;
+		}
+	}
+
+	
+  return xmlhttp;
+}
+
+
+function getXMLResponse(url,param,methodType,funcName)
+{
+	if(typeof url=='undefined') return false;
+	param = (typeof param!='undefined' ? param : '');
+	methodType = (typeof methodType!='undefined' ? methodType:'GET');
+	var xmlHttpObj = getXMLHTTPObject();
+	
+	if (xmlHttpObj)
+	{	
+		xmlHttpObj.open(methodType, url, true);		
+		xmlHttpObj.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+		xmlHttpObj.send((param==''?null:param));
+		if(typeof funcName!='undefined'){			
+			xmlHttpObj.onreadystatechange=funcName;
+			return true;
+		}
+		else{
+			return xmlHttpObj;						
+		}
+	}
+	return false;
+}
+
+//LDP:074 QB Added this new parameter jobInfo
+function MakeFACall(paramStr,CallingFrom,intLocaleid,Session_Id,jobInfo)
+{
+	var strURL;
+	
+	if (CallingFrom != "GQJSQ")
+		strURL = "CandFieldAssociation.asp?SID=" + Session_Id;		
+	else
+		strURL = "../../../" + intLocaleid + "/ASP/TG/CandFieldAssociation.asp?SID=" + Session_Id;
+	
+	var xmlObj = getXMLResponse(strURL, paramStr, 'POST');	
+	
+    xmlObj.onreadystatechange = function()
+									{
+										if(xmlObj.readyState == 4)
+										{
+											if(xmlObj.status == 200)
+											{	
+												//LDP:074 QB Added this new parameter jobInfo
+												processRequestCand(xmlObj,CallingFrom,jobInfo);                        
+												//Hide the please wait image...
+												document.getElementById('pleasewait').style.display = "none";
+												document.getElementById('iframe1').style.display = "none";
+											}
+											else
+											{
+												alert('There is an error in getting Field Associated XML . Response status number is '+xmlObj.status);
+												//Hide the please wait image...
+												document.getElementById('pleasewait').style.display = "none";
+												document.getElementById('iframe1').style.display = "none";
+											}	
+										}
+									}
+	
+}
+
+function getFormFieldInfo(pname,pid,jobInfo,qtype,src)
+{
+	var selobj;
+	var selobj2;
+	var option;
+	var childselection;
+	var childoption;
+	var iCtrarray;
+	var iCtrarray2;
+	var iCtrarray3;
+	var url;
+	var index;
+	var index2;	
+	var partner;
+	var gateway;
+	var langId;
+	var profileid;
+	var UserAnonymous;
+	var localid;
+	var Session_Id;
+	var SiteLevel;
+	var jsqGroupId;
+	
+	var el;
+	var sl;
+	var st;
+	var formparam;
+	var strFormName;
+	var FormsValue;
+	
+	option="";
+	childoption="";
+	childselection="";
+	jsqGroupId = "0";
+	
+	//Get the form Name as we have different form name exists on different pages...
+	if (src == "ANSWERQUESTIONS" || src == "REFERRERANSQUESTIONS")
+		strFormName = "frmApply";
+	else if (src == "GQJSQ")
+		strFormName = "frmPage";
+	else if (src == "ATTACHFORMS" || src == "CANDPORTALFORM" || src == "REFERRALATTACHFORM")
+		strFormName = "frmLogin";	
+	else if (src == "PROFILEQUESTIONS")
+		strFormName = "frmProfile";
+
+	if (src == "GQJSQ")
+	{
+		partner=document.getElementById("FAPartnerId").value;
+		gateway=document.getElementById("FASiteId").value;
+		langId=document.getElementById("FALangId").value;
+		profileid=document.getElementById("FAProfileId").value;
+		UserAnonymous=document.getElementById("FAIsUserAnonymous").value;
+		localid=document.getElementById("FALocaleId").value;
+		Session_Id = document.getElementById("FASessionId").value;
+		jsqGroupId = document.getElementById("FAJSQGroupId").value;		
+	}
+	else
+	{
+		partner="";
+		gateway="";
+		langId="";
+		profileid="";
+		UserAnonymous="";
+		localid="";
+		Session_Id="^ptFn/pw0LQcYZUJ8nPZMDcx7WcpJwf2nMHogFFd61imbbVxTU7g_slp_rhc_8C6oIWkDHsLmOwcvQcAeff11Lrr6EmfyoK6XflgylGkkgKExvvL31Co=";
+		SiteLevel ="";
+	}
+
+	//Add more case statements here based on the question/control types...
+	switch(qtype) 
+	{
+		
+		case "RADIO":
+		case "CHECKBOX":	
+				//Get all checked checkboxes
+				selobj = eval('document.' + strFormName + '.' + pname);
+				if (selobj)
+				{					
+					for (index=0; index < selobj.length; index++) 
+					{						
+						if (selobj[index].checked)
+						{
+							//For thes flow we jsut store the value as it is
+							if (src == "ATTACHFORMS" || src == "CANDPORTALFORM" || src == "REFERRALATTACHFORM" || src == "PROFILEQUESTIONS")
+							{
+								FormsValue=selobj[index].value;
+								
+								if (option == "")
+								{
+									option = FormsValue.replace("&","_AMP_");
+								}
+								else
+								{
+									option = option + "-$-$-" + FormsValue.replace("&","_AMP_");
+								}
+							}
+							else
+							{
+								iCtrarray=selobj[index].value.split('=X|%%%');
+								iCtrarray2=iCtrarray[1].split('&=|');
+								if (iCtrarray2[1] == "")
+								{
+									iCtrarray2=iCtrarray[0].split('&=|');
+								}
+									
+								if (option == "")
+								{
+									option = iCtrarray2[1].replace("&","_AMP_");
+								}
+								else
+								{
+									option = option + "-$-$-" + iCtrarray2[1].replace("&","_AMP_");
+								}
+							}
+						}
+					}
+					
+					
+				}		
+			break;      
+					
+		case 'TEXT':
+		case 'TEXTAREA':
+		case 'NUMERIC':
+		case 'EMAIL':		
+			option = document.getElementById(pname).value;
+			break;
+			
+		case 'SELECT':
+		case 'SINGLE-SELECT':
+		case 'MULTI-SELECT':    
+					
+			selobj = eval('document.' + strFormName + '.' + pname);
+			if (selobj)
+			{					
+				for (index=0; index < selobj.length; index++) 
+				{						
+					if (selobj[index].selected)
+					{
+						//For thes flow we jsut store the value as it is
+						if (src == "ATTACHFORMS" || src == "CANDPORTALFORM" || src == "REFERRALATTACHFORM" || src == "PROFILEQUESTIONS")
+						{
+							FormsValue=selobj[index].value;
+							
+							if (option == "")
+							{
+								option = FormsValue.replace("&","_AMP_");
+							}
+							else
+							{
+								option = option + "-$-$-" + FormsValue.replace("&","_AMP_");
+							}
+						}
+						else
+						{
+							iCtrarray=selobj[index].value.split('=X|%%%');
+							if (iCtrarray.length > 1 )
+							{
+								iCtrarray2=iCtrarray[1].split('&=|');
+								if (iCtrarray2[1] == "")
+								{
+									iCtrarray2=iCtrarray[0].split('&=|');
+								}
+									
+								if (option == "")
+								{
+									option = iCtrarray2[1].replace("&","_AMP_");
+								}
+								else
+								{
+									option = option + "-$-$-" + iCtrarray2[1].replace("&","_AMP_");
+								}
+							}
+						}
+					}
+				}
+			}		
+			break;    
+	}
+
+	st = (document.body.clientHeight - document.getElementById('pleasewait').offsetHeight) / 2 - 100;
+	sl = (document.body.clientWidth - document.getElementById('pleasewait').offsetWidth) / 2 - 150;
+
+
+	document.getElementById('iframe1').style.left = sl + document.body.scrollLeft;
+	document.getElementById('iframe1').style.top = st + document.body.scrollTop;
+	document.getElementById('pleasewait').style.left = sl + document.body.scrollLeft;
+	document.getElementById('pleasewait').style.top = st + document.body.scrollTop;
+	document.getElementById('iframe1').style.display = "block";
+	document.getElementById('pleasewait').style.display = "block";
+
+	formparam="p=" + encodeURI(partner) + "&g=" + encodeURI(gateway) + "&pid=" + encodeURI(pid) + "&o=" + encodeURI(option) + "&lang=" + encodeURI(langId) + "&callingfrom=" + encodeURI(src) + "&jobinfo=" + encodeURI(jobInfo) + "&profileid=" + encodeURI(profileid) + "&useranony=" + encodeURI(UserAnonymous) + "&localeid=" + encodeURI(localid) + "&fieldName=" + encodeURI(pname) + "&sitelevel=" + encodeURI(SiteLevel) + "&jsqGroupId=" + jsqGroupId;	
+	//Call this function which will make the ajax call
+	MakeFACall(formparam,src,localid,Session_Id,jobInfo);
+	
+	
+}
+
+function setSelectedValue (obj, values, delimiter,preserve) {
+    if (!delimiter) delimiter = ',';
+    if(values=='') return false;
+    var valArr=values.split(delimiter);
+    var flag = false;
+    var preserve = (typeof preserve!=undefined ? preserve:false);
+    if (!obj.length || (typeof obj.type!='undefined' && obj.type.match(/select/i)))  
+        switch (obj.type) {
+            case 'radio':
+            case 'checkbox':
+                if(isInArr(valArr, obj.value,delimiter)){
+                	obj.checked = true;
+                	return true;
+                }else if(!preserve)
+                	obj.checked=false;
+                return false;
+            case 'hidden':
+            case 'text':
+            case 'textarea':
+            	obj.value = values;
+                return true;
+            case 'select-one':
+            	if(!preserve)obj.selectedIndex=-1;
+            	for(var i=0;i<obj.options.length;i++)
+            		if(isInArr(valArr,obj.options[i].value.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;'),delimiter)){
+            			obj.options[i].selected=true;
+            			return true;
+            		}
+                return false;
+            case 'select-multiple':            	
+            	if(!preserve)obj.selectedIndex=-1;
+                for(var i=0;i<obj.options.length;i++)
+            		if(isInArr(valArr,obj.options[i].value.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;'),delimiter)){
+            			obj.options[i].selected=true;
+            			flag = true;
+            		}
+                return flag;
+        }
+    for (var i = 0; i < obj.length; i++)
+       if(isInArr(valArr, obj[i].value,delimiter)){
+       		obj[i].checked = true;
+            flag = true;
+       }
+       else if(!preserve)
+       		obj[i].checked = false;
+    return flag;    
+}
+
+//LDP:074 QB Added new last variable to append the qbchildren attribute
+function addCheckBox(formFName,code,strId, value,checked,chkObjOnclick,chkObjOnchange,qbchildrenValue)
+{ 
+  var chk = document.createElement('input') 
+  chk.setAttribute("type","checkbox");
+  chk.setAttribute("name",formFName);
+  chk.setAttribute("id",strId);
+  chk.setAttribute("value",value);
+  chk.setAttribute("option",value);
+  
+  if (checked != '')
+	chk.setAttribute("checked","checked");
+
+  //LDP:074 QB added ltrim	& rtrim functions
+  if (chkObjOnclick!= null || chkObjOnclick == '')
+	chk.setAttribute("onclick",ltrim(rtrim(chkObjOnclick)));
+	
+  //LDP:074 QB added ltrim	& rtrim functions	
+  if (chkObjOnchange!= null || chkObjOnchange == '')	
+	chk.setAttribute("onchange",ltrim(rtrim(chkObjOnchange)));
+  
+  //LDP:074 QB added this new attribute 
+  if (qbchildrenValue != null || qbchildrenValue == '')	
+	chk.setAttribute("qbchildren",qbchildrenValue);
+    
+  return chk; 
+} 
+//LDP:074 QB Added new last variable to append the qbchildren attribute
+function addRadioButton(formFName,code,strId, value,checked,chkObjOnclick,chkObjOnchange,qbchildrenValue)
+{ 
+  
+  var radio = document.createElement('input')   
+  radio.setAttribute("type","radio");
+  radio.setAttribute("name",formFName);
+  radio.setAttribute("id",strId);
+  radio.setAttribute("value",value);
+  radio.setAttribute("option",value);
+  
+  if (checked != '')
+	radio.setAttribute("checked",checked);
+  
+  //LDP:074 QB added ltrim	& rtrim functions
+  if (chkObjOnclick!= null || chkObjOnclick == '')	
+	radio.setAttribute("onclick",ltrim(rtrim(chkObjOnclick)));
+
+  //LDP:074 QB added ltrim	& rtrim functions
+  if (chkObjOnchange!= null || chkObjOnchange == '')	
+	radio.setAttribute("onchange",ltrim(rtrim(chkObjOnchange)));
+  
+   //LDP:074 QB added this new attribute 
+  if (qbchildrenValue != null || qbchildrenValue == '')	
+	radio.setAttribute("qbchildren",qbchildrenValue);
+	  
+  return radio; 
+} 
+
+//LDP:074 QB Added new parameter jobInfo to pass to checkQB function needed...
+function processRequestCand(xmlObj,callingFrom,jobInfo) 
+{			
+	var response;
+	var iCount;
+	var iCount2;
+	var iIdx;
+	var iIdx2;
+	var options;
+	var optionvalues;
+	var queue;
+	var queueparams;
+	var pname;
+	var pid;
+	var qtype;
+	
+	var inputs;
+	var xmlObj;
+	var xmlDoc;
+	var strFormName;
+	var formFName
+	var BrowserType;
+	var strSelectedValue;
+	var iCtrarray;
+	var iCtrarray2;
+	var strElementcontainerName ;
+	strElementcontainerName = "";
+	
+	try
+	{
+		
+		//Get the form Name as we have different form name exists on different pages...
+		if (callingFrom == "ANSWERQUESTIONS" || callingFrom == "REFERRERANSQUESTIONS")
+			strFormName = "frmApply";
+		else if (callingFrom == "GQJSQ")
+			strFormName = "frmPage";
+		else if (callingFrom == "ATTACHFORMS"  || callingFrom == "CANDPORTALFORM" || callingFrom == "REFERRALATTACHFORM")
+			strFormName = "frmLogin";
+		else if (callingFrom == "PROFILEQUESTIONS")
+			strFormName = "frmProfile";		
+		
+		// Load the formObject to use it later...
+		var formObj = document.forms[strFormName];
+		var allSetField=new Array();
+		
+		xmlObj = xmlObj.responseXML;
+		
+		if(navigator.appName.indexOf("Microsoft") != -1)
+			BrowserType = "IE";
+		else
+			BrowserType = "NonIE";
+		
+		if(xmlObj.childNodes.length<1 || xmlObj.childNodes[0].nodeName!='faquestions')
+		{
+			alert('There is an error in Field Assosiated XML .');
+			return;
+		}
+	    
+	    //debugger;
+	      	
+		with (xmlObj.childNodes[0])
+		{
+			for (var i = 0; i < childNodes.length; i++) 
+			{
+					with(childNodes[i])
+					{
+							if(nodeName=='question')
+							{
+								var qId=(typeof getAttribute('questionid')!='undefined'?getAttribute('questionid'):'');									
+								var fieldType=(typeof getAttribute('fieldtype')!='undefined'?getAttribute('fieldtype'):'');                             
+								var isparent =(typeof getAttribute('isparent')!='undefined'?getAttribute('isparent'):'');									 
+								//Stores control Name
+								var formFName=(typeof getAttribute('fieldname')!='undefined'?getAttribute('fieldname'):'');									 
+								//This attributes will come only when we have same questions present in other jobs on ANSWERQUESTIONS page..								
+								var preSelected = (typeof getAttribute('preselected')!='undefined'?getAttribute('preselected'):'');									 
+								//LDP:074 QB This attributes will come only when we have same questions present in other jobs on ANSWERQUESTIONS page..								
+								var questionBranchParent = (typeof getAttribute('qbparent')!='undefined'?getAttribute('qbparent'):'');									 
+								
+								//LDP:074 QB Get the Element Name to check if QuestionBrnaching class exists or not
+								if (callingFrom == "ANSWERQUESTIONS" || callingFrom == "REFERRERANSQUESTIONS" || callingFrom == "GQJSQ") 
+									strElementcontainerName  = 'questionContainer_'+formFName.replace('Question',''); 										
+								else
+									strElementcontainerName  = 'questionContainer_'+qId; 										
+									
+								switch (fieldType.toLowerCase())
+								{
+									case 'checkbox':
+									case 'radio':
+										try
+										{
+											var chkStr = '<input type="'+(fieldType.match(/radio/i)?'radio':'checkbox')+'" name="%0" ID="%ID" value="%1" %checked onclick="%click" onchange="%change"></input><span class="TEXT"> %desc </span>';
+											var chkObjOnclick ='';
+											var chkObjOnchange ='';
+											var selArr = new Array();
+											var div;
+											var iCnt = 0;
+										    
+                                            //Check if the incoming control is preselected for other jobs and need to 
+                                            //populate the same field for other jobs....
+                                            if (preSelected =="Yes")
+                                            {
+												selobj = eval('document.' + strFormName + '.' + formFName);
+												if (selobj)
+												{	
+													//If none of the child node is slected then unselect all earlier seelcted options														
+													for (index=0; index < selobj.length; index++) 
+														selobj[index].checked = false;
+											
+													//Loop through the all incoming child node
+													for(var j=0;j<childNodes.length;j++)
+													{
+														if(childNodes[j].nodeName=='option')		 
+														{   
+															strSelectedValue = childNodes[j].getAttribute('code')    				
+															//Loop through all controls present under this formName
+															for (index=0; index < selobj.length; index++) 
+															{						
+																iCtrarray=selobj[index].value.split('=X|%%%');
+																iCtrarray2=iCtrarray[1].split('&=|');
+																if (iCtrarray2[1] == "")
+																{
+																	iCtrarray2=iCtrarray[0].split('&=|');
+																}
+																	
+																if (strSelectedValue == iCtrarray2[1])
+																{
+																	selobj[index].checked = true;
+																}
+															}
+														}
+													}													
+												
+													
+												}		
+											}
+											else
+											{
+												if(typeof formObj.elements[formFName].length!='undefined')
+												{
+													//COMMENTED THIS AS WE ARE NOT USING THIS ANYMORE...
+													//for(var j=0;j<formObj.elements[formFName].length;j++)
+													//		if(formObj.elements[formFName][j].checked)
+													//			selArr[selArr.length]=formObj.elements[formFName][j].value;
+																
+													if (formObj.elements[formFName][0] != null)
+													{
+														if (formObj.elements[formFName][0].attributes['onchange'] != null)
+															chkObjOnchange = formObj.elements[formFName][0].attributes['onchange'].value;
+														if (formObj.elements[formFName][0].attributes['onclick'] != null)
+															chkObjOnclick = formObj.elements[formFName][0].attributes['onclick'].value;
+													}
+												}
+												else
+												{
+													selArr[0]=(formObj.elements[formFName].checked ? formObj.elements[formFName].value:'');
+													if (formObj.elements[formFName][0] != null)
+													{
+														if (formObj.elements[formFName][0].attributes['onchange'] != null)
+															chkObjOnchange = formObj.elements[formFName].attributes['onchange'].value;
+														if (formObj.elements[formFName][0].attributes['onclick'] != null)
+															chkObjOnclick = formObj.elements[formFName].attributes['onclick'].value;
+													}
+												}
+												
+												//Get the div tag..												
+												//If this question is preselected for other jobs then do not clear it just make the corresponding 
+												//checkbox/radio box as selected
+												//LDP:074 Added this IF condition for answer questions and referral questions flow as we have different naming
+												// conventions for these pages than all other flows/pages
+												document.getElementById(strElementcontainerName).innerHTML = '';
+												div = document.getElementById(strElementcontainerName); 											
+											    
+	                                            var strValue;
+	                                            var qbchildrenValue;
+	                                            calledFrom = callingFrom;	
+	                                            
+	                                            //Getting the values needed for checkQB and getFormFieldInfo function..													
+												if (isparent != 'no' || questionBranchParent == '1')
+												{
+													var onClickEvent = chkObjOnclick.replace('javascript:getFormFieldInfo(','');
+													var strInputParameter = onClickEvent.replace(');','');
+													var arrExtn = strInputParameter.split(",");
+													
+													for (var k=0;k < arrExtn.length ;k++ )
+													{
+														if (k == 0)
+														{
+															var qname = arrExtn[k].replace("'",'').replace("'",'');
+															qname = arrExtn[k].replace('javascript:checkQB(','').replace("'",'').replace("'",'');
+															//LDP:074 QB start added this to trim the spaces which gets added because of XSL IF conditions in the Util.xsl
+															qname = ltrim(qname);
+														}
+														else if (k == 1)
+															var qId =  arrExtn[k].replace("'",'').replace("'",'');
+														else if (k == 2)
+															var jobInfo = arrExtn[k].replace("'",'').replace("'",'');
+														else if (k == 3)
+															var controlType = arrExtn[k].replace("'",'').replace("'",'');																
+													}
+												}
+												
+												//Loop through all nodes now
+												for(var j=0;j<childNodes.length;j++)
+												{
+													if(childNodes[j].nodeName=='option')		 
+													{                             
+														iCnt = iCnt + 1;
+														//For thes flow we jsut store the value as it is
+														if (callingFrom == "ATTACHFORMS" || callingFrom == "CANDPORTALFORM" || callingFrom == "REFERRALATTACHFORM" || callingFrom == "PROFILEQUESTIONS")
+															strValue = childNodes[j].getAttribute('code');
+														else
+															strValue = 'AnswerName&=|' + childNodes[j].getAttribute('optiondesc') + '=X|%%%AnswerValue&=|' + childNodes[j].getAttribute('code') + '=X|%%%GDEAnswerValue&=|=X|%%%Score&=|=X|???';
+															
+														var strId = formFName + '_' + iCnt 
+														
+														//Working using innerHTML property....
+														//document.getElementById('div_chk_'+formFName).innerHTML+=chkStr.replace(/%0/,formFName).replace(/%1/,strValue).replace(/%ID/g,strId).replace(/%checked/,(childNodes[j].getAttribute('selected')=='True'?'checked':'')).replace(/%click/,chkObjOnclick).replace(/%change/g,chkObjOnchange).replace(/%desc/g,childNodes[j].getAttribute('optiondesc') +'<br/>');														
+														
+														var checkedStatus = (childNodes[j].getAttribute('selected')=='True'?'checked':'');
+																
+														if (fieldType.match(/checkbox/i) )	
+														{
+  															//IE 7 does not support NAME attributes...													
+  															if (BrowserType == "IE")
+  															{
+  																//*** This is working fine in IE...														
+																//chk.setAttribute("onclick",function() { getFormFieldInfo(qname,qId,jobInfo,controlType,calledFrom) });
+																//**** IE 7 does not support NAME attributes...		
+																var chk;
+																if (isparent != "no")	
+																{
+																	//LDP:074 QB added IF condition
+																	if (questionBranchParent == '1') 
+																	{
+																		if  (childNodes[j].getAttribute('qbchildren') != null)
+																			qbchildrenValue = childNodes[j].getAttribute('qbchildren');
+																		else
+																			qbchildrenValue = "";
+																			
+																		chk = document.createElement("<INPUT type='CHECKBOX' name='" + qname + "' id='" + strId + "' qbchildren= '" + qbchildrenValue  + "' value='" + strValue + "' option='" + strValue + "'  " + checkedStatus + "  onclick=\"javascript:checkQB('" + qname + "','" + qId + "','" + jobInfo+ "','" + controlType+ "','" + calledFrom+ "');javascript:getFormFieldInfo('" + qname + "','" + qId + "','" + jobInfo+ "','" + controlType+ "','" + calledFrom+ "');\">");
+																	}
+																	else
+																	{
+																		//LDP:074 QB added ltrim	& rtrim functions
+																		chk = document.createElement("<INPUT type='CHECKBOX' name='" + qname + "' id='" + strId + "' value='" + strValue + "' option='" + strValue + "'  " + checkedStatus + "  onclick=\"javascript:getFormFieldInfo('" + qname + "','" + qId + "','" + jobInfo+ "','" + controlType+ "','" + calledFrom+ "');\">");
+																	}
+																}
+																else
+																{
+																	//LDP:074 QB added If condition
+																	if (questionBranchParent == '1') //childNodes[j].getAttribute('qbchildren')																			
+																	{
+																		if  (childNodes[j].getAttribute('qbchildren') != null)
+																			qbchildrenValue = childNodes[j].getAttribute('qbchildren');
+																		else
+																			qbchildrenValue = "";
+																			
+																			chk = document.createElement("<INPUT type='CHECKBOX' name='" + formFName + "' id='" + strId + "' qbchildren= '" + qbchildrenValue  + "' value='" + strValue + "' option='" + strValue + "'  " + checkedStatus + "  onclick=\"javascript:checkQB('" + qname + "','" + qId + "','" + jobInfo+ "','" + controlType+ "','" + calledFrom+ "');\>");
+																	}
+																	else
+																	{																		
+																		chk = document.createElement("<INPUT type='CHECKBOX' name='" + formFName + "' id='" + strId + "' value='" + strValue + "' option='" + strValue + "'  " + checkedStatus + ">");
+																	}
+																}	
+																//Add this in the div tag
+																div.appendChild(chk);
+															}
+															else
+															{
+																if (questionBranchParent == '1') //childNodes[j].getAttribute('qbchildren')	
+																{
+																	if (childNodes[j].getAttribute('qbchildren') != null)																		
+																		qbchildrenValue = childNodes[j].getAttribute('qbchildren');
+																	else
+																		qbchildrenValue = "";
+																}		
+																var chk_1 = addCheckBox(formFName,childNodes[j].getAttribute('code'), strId,strValue,checkedStatus,chkObjOnclick,chkObjOnchange,qbchildrenValue);
+																//Add this in the div tag
+																div.appendChild(chk_1);
+															}														
+															
+														}
+														else
+														{
+															//var radio = addRadioButton(formFName,childNodes[j].getAttribute('code'),strId, strValue,childNodes[j].getAttribute('selected')=='True',chkObjOnclick,chkObjOnchange); 
+															//*** This is working fine in IE...														
+															//chk.setAttribute("onclick",function() { getFormFieldInfo(qname,qId,jobInfo,controlType,calledFrom) });
+															//IE 7 does not support NAME attributes...													
+															var  radio; 
+  															if (BrowserType == "IE")
+  															{
+																//**** IE 7 does not support NAME attributes...		
+																if (isparent != "no")		
+																{	
+																	//LDP:074 QB added IF condition
+																	if (questionBranchParent == '1') 
+																	{
+																		if (childNodes[j].getAttribute('qbchildren') != null)																		
+																			qbchildrenValue = childNodes[j].getAttribute('qbchildren');
+																		else
+																			qbchildrenValue = "";
+																										
+																		radio = document.createElement("<INPUT type='RADIO' name='" + qname + "' id='" + strId + "' value='" + strValue + "'  qbchildren= '" + qbchildrenValue  + "' option='" + strValue + "'  " + checkedStatus + "  onclick=\"javascript:checkQB('" + qname + "','" + qId + "','" + jobInfo+ "','" + controlType+ "','" + calledFrom+ "');javascript:getFormFieldInfo('" + qname + "','" + qId + "','" + jobInfo+ "','" + controlType+ "','" + calledFrom+ "');\">");
+																	}
+																	else
+																	{
+																		//LDP:074 QB added ltrim	& rtrim functions
+																		radio = document.createElement("<INPUT type='RADIO' name='" + qname + "' id='" + strId + "' value='" + strValue + "' option='" + strValue + "'  " + checkedStatus + "  onclick=\"javascript:getFormFieldInfo('" + qname + "','" + qId + "','" + jobInfo+ "','" + controlType+ "','" + calledFrom+ "');\">");
+																	}
+																}
+																else
+																{
+																	//LDP:074 QB added IF condition
+																	if (questionBranchParent == '1') 
+																	{
+																		if (childNodes[j].getAttribute('qbchildren') != null)																		
+																			qbchildrenValue = childNodes[j].getAttribute('qbchildren');
+																		else
+																			qbchildrenValue = "";
+																				
+																		radio = document.createElement("<INPUT type='RADIO' name='" + formFName + "' id='" + strId + "' value='" + strValue + "'  qbchildren= '" + qbchildrenValue  + "' option='" + strValue + "'  " + checkedStatus + "  onclick=\"javascript:checkQB('" + qname + "','" + qId + "','" + jobInfo+ "','" + controlType+ "','" + calledFrom+ "');\>");
+																	}
+																	else
+																	{
+																		radio = document.createElement("<INPUT type='RADIO' name='" + formFName + "' id='" + strId + "' value='" + strValue + "' option='" + strValue + "'  " + checkedStatus + ">");
+																	}
+																}
+																	
+																div.appendChild(radio);
+															}
+															else
+															{
+																//LDP:074 QB added IF condition
+																if (questionBranchParent == '1') //childNodes[j].getAttribute('qbchildren')
+																{	
+																	if (childNodes[j].getAttribute('qbchildren') != null)																		
+																		qbchildrenValue = childNodes[j].getAttribute('qbchildren');
+																	else
+																		qbchildrenValue = "";																			
+																	
+																}	
+																var radio_1 = addRadioButton(formFName,childNodes[j].getAttribute('code'),strId, strValue,checkedStatus,chkObjOnclick,chkObjOnchange,qbchildrenValue); 
+																div.appendChild(radio_1);
+															}																												
+														}
+														
+														//Create this label to display the text next to checkbox
+														var label=document.createElement('label');
+														
+														//We don't need to add Span class in this Profile Questions 
+														if ( callingFrom == "PROFILEQUESTIONS" )
+														    label.innerHTML=childNodes[j].getAttribute('optiondesc') ;
+														else
+														    label.innerHTML="<span class='TEXT'>" + childNodes[j].getAttribute('optiondesc') + "</span>";
+														
+														div.appendChild(label);
+														
+														//Create this for new line.. GQ JSQ shows all checkboxe din one line
+														if (fieldType.match(/checkbox/i))
+														{
+															if (callingFrom != "GQJSQ")
+																div.appendChild(document.createElement('br'));	
+														}
+														else
+															div.appendChild(document.createElement('br'));	
+														
+													}	                                              													
+												}
+												//LDP:074 QB Added this IF condition to trogger the Question branching in Field Association..	
+												//Remove the question branching class if this question is coming
+												var _element;
+												_element = document.getElementById(strElementcontainerName);
+												if (questionBranchParent == '1' && (!HasClass(_element, 'questionBranch_hide')) )
+													checkQB(formFName,qId,jobInfo,fieldType,callingFrom);
+											}
+											break;                                      
+											
+										}
+										catch(e)
+										{
+											alert('Error occured during populating Radio field('+formFName+'). The error message is: '+e.message);
+											return false;
+										}
+										break;
+									
+									case 'text':
+									case 'textarea':
+									case 'numeric':
+									case 'email':
+										try
+										{
+											//NO need to add preselected check here as this is the only one control exists
+											if(typeof childNodes.length!='undefined' && childNodes.length>0)
+											{
+												for(var l=0;l<childNodes.length;l++)
+												{
+													if(childNodes[l].nodeName=='option')
+													{															
+														formObj.elements[formFName].value='';
+														if (BrowserType == "IE")
+															formObj.elements[formFName].value=childNodes[l].text;
+														else	 //Following line works in FF													
+															formObj.elements[formFName].value=childNodes[l].textContent;
+													}
+												}												
+											}
+										}
+										catch(e)
+										{
+											alert('Error occured during populating Text field('+formFName+'). The error message is: '+ e.message);
+											return false;
+										}
+										break;
+										
+									case 'select':
+									case 'single-select':
+									case 'multi-select':          
+										try
+										{
+										    var optionCode;
+											var optionDesc;
+											
+										  if(typeof formObj.elements[formFName]!='undefined' && formObj.elements[formFName].type.match(/select/i))
+                                          {
+												//Check if the incoming control is preselected for other jobs and need to 
+												//populate the same field for other jobs....
+												if (preSelected =="Yes")
+												{
+	                                            	selobj = eval('document.' + strFormName + '.' + formFName);
+													if (selobj)
+													{	
+														//If none of the child node is slected then unselect all earlier seelcted options
+														//Loop through all controls present under this formName
+														for (index=0; index < selobj.length; index++) 
+															selobj[index].selected = false;																
+													
+														//Loop through the all incoming child node
+														for(var m=0;m<childNodes.length;m++)
+														{
+															if(childNodes[m].nodeName=='option')		 
+															{   
+																strSelectedValue = childNodes[m].getAttribute('code')    				
+																//Loop through all controls present under this formName
+																for (index=0; index < selobj.length; index++) 
+																{						
+																	iCtrarray=selobj[index].value.split('=X|%%%');
+																	iCtrarray2=iCtrarray[1].split('&=|');
+																	if (iCtrarray2[1] == "")
+																	{
+																		iCtrarray2=iCtrarray[0].split('&=|');
+																	}
+																		
+																	if (strSelectedValue == iCtrarray2[1])
+																	{
+																		selobj[index].selected = true;
+																	}																		
+																	
+																}
+															}
+														}
+														
+													}
+													
+												}
+												else
+												{
+													//COMMENTED THIS AS WE ARE NOT USING THIS ANYMORE....
+													//var selArr = new Array();
+													//for(var p=0,k=0;j<formObj.elements[formFName].options.length;j++)
+													//		if(formObj.elements[formFName].options[p].selected)
+													//				selArr[k++]=formObj.elements[formFName].options[p].value;
+		                                                
+														//For single select we always show the select One in dropdown
+														if (fieldType.match(/single-select/i))
+															formObj.elements[formFName].options.length=1;
+														else
+															formObj.elements[formFName].options.length=0;
+														
+														//For singleselect we don't need to add one more empty nodes	
+														if(fieldType.match(/^select$/i))
+															formObj.elements[formFName].options[formObj.elements[formFName].options.length] = new Option('','',false,false);                                                    
+		                                                
+		                                                var strValue;
+														for(var l=0;l<childNodes.length;l++)
+														{
+															if(childNodes[l].nodeName=='option')
+															{		
+																//Do xml decode here..as we are doing xmlencode from COM layer
+																optionCode = XmlDecode(childNodes[l].getAttribute('code'));
+																optionDesc = XmlDecode(childNodes[l].getAttribute('optiondesc'));
+																//Replacing the single quote also
+																optionCode = optionCode.replace(/\&apos;/g,"'");
+																optionDesc = optionDesc.replace(/\&apos;/g,"'");
+																
+																//Prepare Value to be used for control..
+																//For thes flow we jsut store the value as it is
+																if (callingFrom == "ATTACHFORMS" || callingFrom == "CANDPORTALFORM" || callingFrom == "REFERRALATTACHFORM" || callingFrom == "PROFILEQUESTIONS")
+																	strValue = optionCode;
+																else
+																	strValue = 'AnswerName&=|' + optionDesc  + '=X|%%%AnswerValue&=|' + optionCode + '=X|%%%GDEAnswerValue&=|=X|%%%Score&=|=X|???';														
+																 
+																//Check the selected attribute here 
+																var selFlag = childNodes[l].getAttribute('selected')=='True';
+																
+																//LDP:074 QB starts Changes Added this new variable to assign the qbchildren attribute
+																var _objOption = new Option(optionDesc,strValue,selFlag,selFlag);
+					                        					if (questionBranchParent == '1') 
+					                        					{
+					                        						if (childNodes[l].getAttribute('qbchildren') != null)																		
+																		qbchildrenValue = childNodes[l].getAttribute('qbchildren');
+																	else
+																		qbchildrenValue = "";	
+																		
+																    _objOption.setAttribute('qbchildren',qbchildrenValue);
+																}
+																//LDP:074 QB End
+																//LDP:074 QB Assgin the above variable as follows
+																formObj.elements[formFName].options[formObj.elements[formFName].options.length] = _objOption;
+															} 
+														}
+														
+														//LDP:074 QB Added this IF condition to trogger the Question branching in Field Association..	
+														//Check if the incmoing question is hidden if it is then remove the questionBranch_hide class
+														//enable the children		
+														//Remove the question branching class if this question is coming
+														var _element1;
+														_element1 = document.getElementById(strElementcontainerName);																	
+														if (questionBranchParent == '1' && (!HasClass(_element1, 'questionBranch_hide')))
+															checkQB(formFName,qId,jobInfo,fieldType,callingFrom);
+												}
+												
+											}											
+											
+										}
+										catch(e)
+										{
+											alert('Error occured during populating Select field('+formFName+'). The error message is: '+e.message);
+											return false;
+										}
+										break;
+									
+								}									
+							
+							}
+					}
+				}		//FOR Loop
+			}   //With Child[0] check          			
+         }
+		catch (e)
+		{
+            alert('Error in processRequestCand '+ e.message);
+		}	
+	}
+	
+//LDP:074 Question Branching related changes / new functions
+
+//Question branching related scripts.
+var pQBArr = new Array();
+var cQBArr = new Array();
+var cpview_cQBArr = new Array();
+//187573: Added this to store the profile question hidden element array
+var cQBArr_profile = new Array();
+
+function trim(str) 
+{
+	return str.replace(/^\s+|\s+$/g,"");
+}
+function ltrim(str) 
+{
+	return str.replace(/^\s+/,"");
+}
+function rtrim(str) 
+{
+	return str.replace(/\s+$/,"");
+}
+
+function isHidden(qbchild, questionid) { return qbchild ? HasClass((document.getElementById('questionContainer_' + questionid)), 'questionBranch_hide') : false; }
+
+function CheckQBQuestions()
+{	
+	var strListValues;
+	var strQuestionType;
+	var strbuildstring;	
+	var strControlName;
+	//debugger;
+	
+	//Remove all the hidden children from the DOM before submit - For Question Branching.
+    if (typeof cQBArr!='undefined'&&typeof cQBArr.length!='undefined'&&cQBArr.length>0)
+    {
+        for (i=0; i<cQBArr.length; i++)
+        {
+			var _childElement = document.getElementById(cQBArr[i]);			
+			if(typeof _childElement !='undefined' && _childElement!=null)
+			{	
+				//Remove that child from the node
+				if (HasClass(_childElement, 'questionBranch_hide')) 
+				{	
+					//USe this for ANSWER QUESTIONS PAGE FLOW..
+					///in GetlistvaluesNew function we are reading the controls from this node.. hence we need to remove that from this list.
+					if (document.getElementById("sListValues") !='undefined' && document.getElementById("sListValues") !=null)				
+					{
+						strQuestionType = _childElement.getAttribute('qtype');	
+						strListValues = document.getElementById("sListValues").value;
+						//Get the input type value and use it here..
+						//For checkbox and Radio _childElement.firstChild.id is coming as _1 or _2 appended as per location..
+						if (strQuestionType == 'radio' || strQuestionType == 'checkbox' || strQuestionType == 'date')
+						{
+							var arrQuestion;
+							var strQuestionId;
+							arrQuestion = cQBArr[i].split('_');
+							strQuestionId =  arrQuestion[1];
+							if (strQuestionType == 'date')
+							{
+								strReplacestring = '@|@|@|' + 'Question' + strQuestionId + '__FormText_1_1' + ';' + strQuestionType; 
+								strControlName = 'Question' + strQuestionId + '__FormText_1_1' + ';' + strQuestionType;
+							}
+							else
+							{
+								strReplacestring = '@|@|@|' + 'Question' + strQuestionId + '__FormText' + ';' + strQuestionType; 
+								strControlName = 'Question' + strQuestionId + '__FormText' + ';' + strQuestionType;
+							}	
+							
+							strListValues = strListValues.replace(strReplacestring,'');
+							
+							//On GQ-JSQ FLow first question is coming like this always "Question40085__FormText;single-select@|@|@|Question40084__FormText;multi-select@|@|@|Question40083__FormText;radio							
+							if (strListValues.indexOf(strReplacestring) != -1)
+								strListValues = strListValues.replace(strControlName,'');
+						}
+						else
+						{
+							strReplacestring = '@|@|@|' + _childElement.firstChild.id + ';' + strQuestionType;
+							strControlName = _childElement.firstChild.id + ';' + strQuestionType;
+							
+							strListValues = strListValues.replace(strReplacestring,'');
+							
+							//If it is SSN then do it twice because it may have confirmation sn field present.
+							if (strQuestionType == 'ssn')
+								strListValues = strListValues.replace(strReplacestring,'');
+							
+							//On GQ-JSQ FLow first question is coming like this always "Question40085__FormText;single-select@|@|@|Question40084__FormText;multi-select@|@|@|Question40083__FormText;radio							
+							if (strListValues.indexOf(strControlName) != -1)
+								strListValues = strListValues.replace(strControlName,'');
+								
+						}
+						
+						//In  remove the first characters as this is not needed.
+						if (strListValues.substring(0,6) == '@|@|@|')
+						{
+						    if(strListValues.substring(strListValues.length-1,strListValues.length) == '|')
+						    {
+							    strListValues = strListValues.substring(6,strListValues.length);
+							}
+							else
+							{
+							    strListValues = strListValues.substring(6,strListValues.length - 1);
+							}
+						}
+						
+						//Assign back to hidden variable again
+						document.getElementById("sListValues").value = strListValues;
+					}
+					
+					//Remove from DOM before submitting..
+					_childElement.parentNode.removeChild(_childElement);
+				}
+			}
+        }
+    }
+    return true;
+}       
+
+
+function CheckQBQuestionsForProfile()
+{	
+	var strListValues;
+	var strQuestionType;
+	var strbuildstring;	
+	var strControlName;
+	var divId;
+	
+	var strFormName;
+	strFormName = "frmProfile";
+	
+	//debugger;
+	 	
+	//Remove all the hidden children from the DOM before submit - For Question Branching.
+	var i;
+	var _childQId;
+	var _ParentElement;
+	
+    if (typeof cQBArr_profile !='undefined'&&typeof cQBArr_profile.length!='undefined'&&cQBArr_profile .length>0)
+    {
+        for (i=0; i<cQBArr_profile.length; i++)
+        {
+			_childQId = cQBArr_profile[i];			
+			//_ParentElement = document.getElementById('profile_content');			
+			var _childElement = document.getElementById('questionContainer_' + _childQId);			
+			if(typeof _childElement !='undefined' && _childElement!=null)
+			{	
+				//Remove that child from the node
+				if (HasClass(_childElement, 'questionBranch_hide')) 
+				{
+					_childElement.parentNode.removeChild(_childElement);
+				}
+				 //Use same thing for SSN COnfirm question if present
+                var _element = document.getElementById('questionContainer_CONFIRMFIELD_' + _childQId);
+                if (typeof (_element) != 'undefined' && _element != null) 
+                {
+					//Remove that child from the node
+					if (HasClass(_element, 'questionBranch_hide')) 
+					{
+						_element.parentNode.removeChild(_element);
+					}
+				}
+			}
+			
+		}
+	}
+    return true;
+}     
+
+function checkQB(pname,qId,jobId,qType,src) 
+{
+    var _childrenToShow;
+    var _childrenToHide;
+    var _element;
+    var _qbparentqid;
+    var _childArr;
+    var _parentDivElement;
+    
+    var selobj;
+	var selobj2;
+	var option;	
+	var index;
+	var index2;		
+	var strFormName;
+	var FormsValue;
+	var iCtrarray2;
+	
+	//Initialise and decalre this here in ths function..to avoid indefinite looping..
+	var i;
+	i = 0;
+	
+	_childrenToShow = "";
+	option="";
+	childoption="";
+	childselection="";
+	FormsValue = "";	
+	var _childQId;
+	
+	//debugger;
+	
+	//Get the form Name as we have different form name exists on different pages...
+	if (src == "ANSWERQUESTIONS" || src == "REFERRERANSQUESTIONS")
+		strFormName = "frmApply";
+	else if (src == "GQJSQ")
+		strFormName = "frmPage";
+	else if (src == "ATTACHFORMS" || src == "CANDPORTALFORM" || src == "REFERRALATTACHFORM")
+		strFormName = "frmLogin";	
+	else if (src == "PROFILEQUESTIONS")
+		strFormName = "frmProfile";
+
+	_qbparentqid = qId;
+	
+	//For Answer questions page it is different as multiple jobs and default questions comes	
+	_parentDivElement = document.getElementById('questionContainer_' + _qbparentqid);
+	
+	switch(qType.toUpperCase()) 
+	{
+		
+		case "RADIO":
+		case "CHECKBOX":	
+				//Get all checked checkboxes
+				selobj = eval('document.' + strFormName + '.' + pname);
+				if (selobj)
+				{	
+				    if (selobj.length != undefined) {				
+					    for (index=0; index < selobj.length; index++) 
+					    {						
+						    if (selobj[index].checked)
+						    {
+							    FormsValue=selobj[index].value;						
+    							
+							    if  (selobj[index].getAttribute('qbchildren') != null)		
+								    _childrenToShow = (_childrenToShow != '' ? _childrenToShow + ',' + selobj[index].getAttribute('qbchildren') : selobj[index].getAttribute('qbchildren'));
+						    }
+					    }
+				    }
+                    else {
+                        if (selobj.checked) {
+                            FormsValue = selobj.value;
+
+                            if (selobj.getAttribute('qbchildren') != null)
+                                _childrenToShow = (_childrenToShow != '' ? _childrenToShow + ',' + selobj.getAttribute('qbchildren') : selobj.getAttribute('qbchildren'));
+                        }
+                    }
+				}		
+			break;      
+			
+		case 'SELECT':
+		case 'SINGLE-SELECT':
+		case 'MULTI-SELECT':    
+					
+			selobj = eval('document.' + strFormName + '.' + pname);
+			if (selobj)
+			{					
+				for (index=0; index < selobj.length; index++) 
+				{						
+					if (selobj[index].selected)
+					{
+						//For thes flow we jsut store the value as it is
+						FormsValue=selobj[index].value;
+						if  (selobj[index].getAttribute('qbchildren') != null)		
+							_childrenToShow = (_childrenToShow != '' ? _childrenToShow + ',' + selobj[index].getAttribute('qbchildren') : selobj[index].getAttribute('qbchildren'));
+							
+					}
+				}
+			}		
+			break;    
+			
+		default:
+			_childrenToShow = obj.getAttribute('qbchildren');
+	}
+
+	//If multiple job is selected in ANSWERQUESTIONS PAGE THEN HANDLE IT SEPARATELY....
+	//Support BASIC TG QUESTIONS FORMS ALso as in that case jobId is coming as empty
+	if( (jobId != '') ||  (src == "ANSWERQUESTIONS" || src == "REFERRERANSQUESTIONS"))
+	{		
+		CheckQBForMultipleJobs(pname,qId,jobId,qType,src,_childrenToShow);			
+		return;		
+	}
+    
+    //Hide old children
+    if (_parentDivElement.getAttribute('qbhistory') != null) {
+        _childrenToHide = _parentDivElement.getAttribute('qbhistory');
+        if (_childrenToHide != '') {
+            _childArr = _childrenToHide.split(",");
+            for (i = 0; i < _childArr.length; i++) 
+            {
+				_childQId = _childArr[i];
+				
+            	//enable the children
+                _element = document.getElementById('questionContainer_' + _childQId);
+                if (typeof (_element) != 'undefined' && _element != null) 
+                {
+                    if (!HasClass(_element, 'questionBranch_hide'))
+                        AddClass(_element, 'questionBranch_hide',true);
+                }
+                
+                //Use same thing for SSN COnfirm question if present
+                _element = document.getElementById('questionContainer_CONFIRMFIELD_' + _childQId);
+                if (typeof (_element) != 'undefined' && _element != null) 
+                {
+                    if (!HasClass(_element, 'questionBranch_hide'))
+                        AddClass(_element, 'questionBranch_hide',true);
+                }
+                
+                //187573: Added this to check before Profile question saving..
+                if (src == "PROFILEQUESTIONS")
+					cQBArr_profile[cQBArr_profile.length] = _childQId;
+                
+                 //use this code base to remove the class whoch we added for ROWS AND COLUMNS TO HIDE
+				 HideRowsAndColumns(src,_childQId);
+				 
+				 //Now check if the incoming question is having children associated ( check for grand children of main incoming question)
+				hideNestedChildren(src,_childQId)				 
+                
+            }
+        }
+        //Clear history
+        _parentDivElement.setAttribute('qbhistory', '');
+    }
+    
+    //Show new children
+    if (_childrenToShow != null && _childrenToShow != '' && _childrenToShow != '0' && typeof (_childrenToShow) != 'undefined') 
+    {
+        _childArr = _childrenToShow.split(",");
+        
+        for (i = 0; i < _childArr.length; i++) 
+        {
+			//enable the children
+            _element = document.getElementById('questionContainer_' + _childArr[i]);
+            if (typeof (_element) != 'undefined' && _element != null) 
+            {
+                RemoveClass(_element, 'questionBranch_hide');
+            }
+            
+            //Enable SSN COnfirm question if present
+             _element = document.getElementById('questionContainer_CONFIRMFIELD_' + _childArr[i]);
+            
+            if (typeof (_element) != 'undefined' && _element != null) 
+            {
+                RemoveClass(_element, 'questionBranch_hide');
+            }
+            
+            //use this code base to remove the class whoch we added for ROWS AND COLUMNS TO HIDE
+			UnHideRowsAndColumns(src,_childArr[i]);
+			
+			//This is used to show the grand childrens of this child
+			showNestedChildren(src,_childArr[i]);
+		
+			//187573: This code is to remove the questions from the previously populated array	
+			if (src == "PROFILEQUESTIONS")
+			{
+				if (typeof cQBArr_profile !='undefined'&&typeof cQBArr_profile .length!='undefined'&&cQBArr_profile .length>0)
+				{
+					for (var p=0; p<cQBArr_profile.length; p++)
+					{
+						if(cQBArr_profile[p]  ==   _childArr[i])
+						{
+							cQBArr_profile.splice(p,1);
+							break;
+						}
+							
+					}
+				}
+			}
+        }
+        //Store new children in the history attribute
+        _parentDivElement.setAttribute('qbhistory', _childrenToShow);
+    }
+    
+    //***THIS IS FOR PRE-SELECTED VALUE.. because we are making the qbchild as 0 ( FROM COM) for child questions if parent option is preselected..
+    //if no option is selected for the parent then we need to hide the all children.
+    //This is when we selected parent and child option and saved it and when it is loaded again and if candidate
+    //selects unselect the answer then we need to hide all children of that parent..
+    //Used the OR condiftion instead of AND condiition
+    if ((_childrenToShow == '' || FormsValue == '') && (_parentDivElement.getAttribute('qbhistory') == null))
+    {
+		//Get all answers qchildren node
+		selobj = eval('document.' + strFormName + '.' + pname);
+		if (selobj)
+		{					
+			for (index=0; index < selobj.length; index++) 
+			{
+				if (selobj[index].getAttribute('qbchildren') != '' && selobj[index].getAttribute('qbchildren') != null)						
+					_childrenToShow = (_childrenToShow != '' ? _childrenToShow + ',' + selobj[index].getAttribute('qbchildren') : selobj[index].getAttribute('qbchildren'));					
+			}
+		}
+		
+		 //Show new children
+		if (_childrenToShow != null && _childrenToShow != '' && _childrenToShow != '0' && typeof (_childrenToShow) != 'undefined') 
+		{
+			_childArr = _childrenToShow.split(",");
+			for (i = 0; i < _childArr.length; i++) 
+			{
+				_childQId = _childArr[i];
+				
+				//enable the children
+				_element = document.getElementById('questionContainer_' + _childArr[i]);
+				if (typeof (_element) != 'undefined' && _element != null) 
+				{
+					 if (!HasClass(_element, 'questionBranch_hide'))
+                        AddClass(_element, 'questionBranch_hide',true);
+                
+					  //use this code base to remove the class whoch we added for ROWS AND COLUMNS TO HIDE        
+                      HideRowsAndColumns(src,_childArr[i]);
+				}	     
+				
+				//ENABLE the children for SSN COnfirm question also
+				_element = document.getElementById('questionContainer_CONFIRMFIELD_' + _childArr[i]);
+				if (typeof (_element) != 'undefined' && _element != null) 
+				{
+					 if (!HasClass(_element, 'questionBranch_hide'))
+                        AddClass(_element, 'questionBranch_hide',true);
+                
+					  //use this code base to remove the class whoch we added for ROWS AND COLUMNS TO HIDE        
+                      HideRowsAndColumns(src,_childArr[i]);
+				}	     
+			
+				//Now check if the incoming question is having children associated ( check for grand children of main incoming question)
+				hideNestedChildren(src,_childQId)			       
+			}
+			//Store new children in the history attribute
+			_parentDivElement.setAttribute('qbhistory', _childrenToShow);
+		}		
+    }
+}
+
+//This function is used to hide the questions
+function hideNestedChildren(src,questionId)
+{
+	var _childrenToShow;
+    var _childrenToHide;
+    var _element;
+    var _qbparentqid;
+    var _childArr_1;
+    var _parentDivElement;
+    var i;
+    i = 0;
+    
+	_childrenToShow = "";
+
+	//For Answer questions page it is different as multiple jobs and default questions comes	
+	_parentDivElement = document.getElementById('questionContainer_' + questionId);
+
+	if (typeof (_parentDivElement) != 'undefined' && _parentDivElement != null) 
+	{
+		if (_parentDivElement.getAttribute('qbhistory') != null && _parentDivElement.getAttribute('qbhistory') != '')
+		{
+			_childrenToHide = _parentDivElement.getAttribute('qbhistory');
+			if (_childrenToHide != '')         
+			{
+				_childArr_1 = _childrenToHide.split(",");
+				for (i = 0; i < _childArr_1.length; i++) 
+				{
+					//enable the children
+					_element = document.getElementById('questionContainer_' + _childArr_1[i]);
+					if (typeof (_element) != 'undefined' && _element != null) 
+					{
+						if (!HasClass(_element, 'questionBranch_hide'))
+							AddClass(_element, 'questionBranch_hide',true);
+					}
+		            
+					//Use same thing for SSN COnfirm question if present
+					_element = document.getElementById('questionContainer_CONFIRMFIELD_' + _childArr_1[i]);
+					if (typeof (_element) != 'undefined' && _element != null) 
+					{
+						if (!HasClass(_element, 'questionBranch_hide'))
+							AddClass(_element, 'questionBranch_hide',true);
+					}
+		            
+					//use this code base to remove the class whoch we added for ROWS AND COLUMNS TO HIDE
+					HideRowsAndColumns(src,_childArr_1[i]);
+		            
+		            //Again call recrusively this function
+		            hideNestedChildren(src,_childArr_1[i]);
+				}
+		        
+			}
+		}
+	}
+}
+
+
+
+function showNestedChildren(src,questionId)
+{
+	var _childrenToShow;
+    var _childrenToHide;
+    var _element;
+    var _qbparentqid;
+    var _childArr;
+    var _parentDivElement;
+    var pname;
+    
+    var selobj;
+	var selobj2;
+	var option;	
+	var index;
+	var index2;		
+	var strFormName;
+	var FormsValue;
+	var iCtrarray2;
+	var i;
+	i = 0;
+	
+	_childrenToShow = "";
+	option="";
+	childoption="";
+	childselection="";
+	FormsValue = "";	
+	
+	//debugger;
+	
+	//Get the form Name as we have different form name exists on different pages...
+	if (src == "ANSWERQUESTIONS" || src == "REFERRERANSQUESTIONS")
+		strFormName = "frmApply";
+	else if (src == "GQJSQ")
+		strFormName = "frmPage";
+	else if (src == "ATTACHFORMS" || src == "CANDPORTALFORM" || src == "REFERRALATTACHFORM")
+		strFormName = "frmLogin";	
+	else if (src == "PROFILEQUESTIONS")
+		strFormName = "frmProfile";
+
+	_qbparentqid = questionId;
+	
+	//For Answer questions page it is different as multiple jobs and default questions comes	
+	_parentDivElement = document.getElementById('questionContainer_' + _qbparentqid);
+
+	//For Lable we don't need this code to execute
+	if (_parentDivElement != 'undefined' && _parentDivElement != null)
+	{
+		if (_parentDivElement.firstChild.name != '')
+			pname = _parentDivElement.firstChild.name;
+		else
+			pname = _parentDivElement.firstChild.id;
+
+		//Get all checked checkboxes
+		selobj = eval('document.' + strFormName + '.' + pname);
+		if (selobj)
+		{					
+			for (index=0; index < selobj.length; index++) 
+			{				
+				if ((typeof(selobj[index].checked) != 'undefined' && typeof(selobj[index].checked) != null) ||	(typeof(selobj[index].selected) != 'undefined' && typeof(selobj[index].selected) != null))
+				{
+					if (typeof(selobj[index].checked) != 'undefined') 
+					{
+						if (selobj[index].checked)
+						{
+							FormsValue=selobj[index].value;						
+							
+							if  (selobj[index].getAttribute('qbchildren') != null)		
+								_childrenToShow = (_childrenToShow != '' ? _childrenToShow + ',' + selobj[index].getAttribute('qbchildren') : selobj[index].getAttribute('qbchildren'));
+						}
+					}	
+					else if (typeof(selobj[index].selected) != 'undefined')
+					{
+						if (selobj[index].selected)
+						{
+							FormsValue=selobj[index].value;						
+							
+							if  (selobj[index].getAttribute('qbchildren') != null)		
+								_childrenToShow = (_childrenToShow != '' ? _childrenToShow + ',' + selobj[index].getAttribute('qbchildren') : selobj[index].getAttribute('qbchildren'));
+						}
+					}					
+					
+				}
+			}
+		}		
+	}
+	  //Show new children
+    if (_childrenToShow != null && _childrenToShow != '' && _childrenToShow != '0' && typeof (_childrenToShow) != 'undefined') 
+    {
+        _childArr = _childrenToShow.split(",");
+        
+        for (i = 0; i < _childArr.length; i++) 
+        {
+			questionId = _childArr[i];
+			
+			//enable the children
+            _element = document.getElementById('questionContainer_' + _childArr[i]);
+            if (typeof (_element) != 'undefined' && _element != null) 
+            {
+                RemoveClass(_element, 'questionBranch_hide');
+            }
+            
+            //Enable SSN COnfirm question if present
+             _element = document.getElementById('questionContainer_CONFIRMFIELD_' + _childArr[i]);
+            
+            if (typeof (_element) != 'undefined' && _element != null) 
+            {
+                RemoveClass(_element, 'questionBranch_hide');
+            }
+            
+            //use this code base to remove the class whoch we added for ROWS AND COLUMNS TO HIDE
+			UnHideRowsAndColumns(src,_childArr[i]);
+			
+			//call this function recrusively for all questions
+			showNestedChildren(src,questionId);
+        }       
+    }
+				
+}
+
+//This function is used to hide all nested childrens for multiple job apply flow
+function hideNestedChildrenForMultiplejobs(strqid,strChildControlName,strSelectedControlJobId,strFormName)
+{
+	var _childrenToShow;
+    var _childrenToHide;
+    var _element;
+    var _qbparentqid;
+    var _childArr_1;
+    var _parentDivElement;
+    var i;
+    i = 0;
+    var strNestedChildControlName;
+    strNestedChildControlName = '';
+    var _element;
+	var strRowControl;
+	var strChildControl;
+	
+    
+	_childrenToShow = "";
+
+	//For Answer questions page it is different as multiple jobs and default questions comes	
+	_parentDivElement = document.getElementById(strChildControlName);
+	if (typeof (_parentDivElement) != 'undefined' && _parentDivElement != null) 
+		_parentDivElement = document.getElementById(strChildControlName);
+	else
+	{
+		strChildControlName = 'questionContainer_' + strqid + '__FormText';	
+		_parentDivElement = document.getElementById(strChildControlName);
+	}
+	
+	if (typeof (_parentDivElement) != 'undefined' && _parentDivElement != null) 
+	{
+		if (_parentDivElement.getAttribute('qbhistory') != null)
+		{
+			_childrenToHide = _parentDivElement.getAttribute('qbhistory');
+			if (_childrenToHide != '')         
+			{
+				_childArr_1 = _childrenToHide.split(",");
+				for (i = 0; i < _childArr_1.length; i++) 
+				{	 
+					//build the control name
+					strNestedChildControlName = strChildControlName.replace(strqid,_childArr_1[i]);
+					
+					//Hide all child controls
+					HideChildrens(_childArr_1[i],strNestedChildControlName,strSelectedControlJobId);
+		            
+		            //Again call recrusively this function by replacing the current question with incoming child questions..
+		            hideNestedChildrenForMultiplejobs(_childArr_1[i],strNestedChildControlName,strSelectedControlJobId);		            
+				}
+		        
+			}
+		}
+	}
+	
+}
+
+//This function is used to show all nested childrens for multiple job apply flow
+function showNestedChildrenForMultipleJobs(strqid,strChildControlName,strSelectedControlJobId,strFormName)
+{
+	var _childrenToShow;
+    var _childrenToHide;
+    var _element;
+    var _qbparentqid;
+    var _childArr;
+    var _parentDivElement;
+    var pname;
+    var strNestedChildControlName;
+	var strRowControl;
+    var strChildControl;
+
+    var selobj;
+	var selobj2;
+	var option;	
+	var index;
+	var index2;		
+	var strFormName;
+	var FormsValue;
+	var iCtrarray2;
+	var i;
+	i = 0;
+	var questionId;
+	
+	_childrenToShow = "";
+	option="";
+	childoption="";
+	childselection="";
+	FormsValue = "";	
+	strNestedChildControlName = "";
+		
+	//debugger;
+	
+	//For Answer questions page it is different as multiple jobs and default questions comes	
+	_parentDivElement = document.getElementById(strChildControlName);
+	if (typeof (_parentDivElement) != 'undefined' && _parentDivElement != null) 
+		_parentDivElement = document.getElementById(strChildControlName);
+	else
+	{
+		strChildControlName = 'questionContainer_' + strqid + '__FormText';	
+		_parentDivElement = document.getElementById(strChildControlName);
+	}
+	
+	//For Lable we don't need this code to execute
+	if (_parentDivElement != 'undefined' && _parentDivElement != null)
+	{
+		if (_parentDivElement.firstChild.name != '')
+			pname = _parentDivElement.firstChild.name;
+		else
+			pname = _parentDivElement.firstChild.id;
+
+		//Get all checked checkboxes
+		selobj = eval('document.' + strFormName + '.' + pname);
+		if (selobj)
+		{					
+			for (index=0; index < selobj.length; index++) 
+			{				
+				if ((typeof(selobj[index].checked) != 'undefined' && typeof(selobj[index].checked) != null) ||	(typeof(selobj[index].selected) != 'undefined' && typeof(selobj[index].selected) != null))
+				{
+					if (typeof(selobj[index].checked) != 'undefined') 
+					{
+						if (selobj[index].checked)
+						{
+							FormsValue=selobj[index].value;						
+							
+							if  (selobj[index].getAttribute('qbchildren') != null)		
+								_childrenToShow = (_childrenToShow != '' ? _childrenToShow + ',' + selobj[index].getAttribute('qbchildren') : selobj[index].getAttribute('qbchildren'));
+						}
+					}	
+					else if (typeof(selobj[index].selected) != 'undefined')
+					{
+						if (selobj[index].selected)
+						{
+							FormsValue=selobj[index].value;						
+							
+							if  (selobj[index].getAttribute('qbchildren') != null)		
+								_childrenToShow = (_childrenToShow != '' ? _childrenToShow + ',' + selobj[index].getAttribute('qbchildren') : selobj[index].getAttribute('qbchildren'));
+						}
+					}					
+					
+				}
+			}
+		}		
+	}
+	  //Show new children
+    if (_childrenToShow != null && _childrenToShow != '' && _childrenToShow != '0' && typeof (_childrenToShow) != 'undefined') 
+    {
+        _childArr = _childrenToShow.split(",");
+        
+        for (i = 0; i < _childArr.length; i++) 
+        {
+			questionId = _childArr[i];
+			
+			//build the control name
+			strNestedChildControlName = strChildControlName.replace(strqid,questionId);
+
+			//This function is used to show the childrens
+			UnHideChildrens(_childArr[i],strNestedChildControlName,strSelectedControlJobId);					
+									
+			//call this function recrusively for all questions//This is used to show the grand childrens of this child
+			showNestedChildrenForMultipleJobs(_childArr[i],strNestedChildControlName,strSelectedControlJobId,strFormName)
+			
+        }       
+    }
+				
+}
+
+
+//THIS function is used to HIDE the children
+function HideChildrens(strqid, strChildControlName,strSelectedControlJobId)
+{
+
+	 var _element;
+	 var strRowControl;
+	 var strChildControl;
+	 
+	 
+	_element = document.getElementById(strChildControlName);
+	if (typeof (_element) != 'undefined' && _element != null) 
+	{
+		if (!HasClass(_element, 'questionBranch_hide'))
+			AddClass(_element, 'questionBranch_hide',true);
+	}
+	
+	//Hide the JOB SPECIFIC QUESTION MAIN ROW..//use this code base to remove the class which we added for ROWS AND COLUMNS TO HIDE
+	strRowControl = 'quemainrow_' + strqid + '__FormText$' + strSelectedControlJobId;
+	_element = document.getElementById(strRowControl);
+	if (typeof (_element) != 'undefined' && _element != null) 
+	{
+		if (!HasClass(_element, 'questionBranch_hide'))
+			AddClass(_element, 'questionBranch_hide',true);
+	}
+	
+	//FOR SSN CONFIRM QUESTION Hide the JOB SPECIFIC QUESTION MAIN ROW..//use this code base to remove the class which we added for ROWS AND COLUMNS TO HIDE
+	strRowControl = 'quemainrow_CONFIRMFIELD_' + strqid + '__FormText$' + strSelectedControlJobId;
+	_element = document.getElementById(strRowControl);
+	if (typeof (_element) != 'undefined' && _element != null) 
+	{
+		if (!HasClass(_element, 'questionBranch_hide'))
+			AddClass(_element, 'questionBranch_hide',true);
+	}
+		
+	//Check FOR DEFAULTS QUESTIONS ALSO...AFTER JOB SPECIFIC QUESTION.. 
+	strChildControl = 'questionContainer_' + strqid + '__FormText';								
+	_element = document.getElementById(strChildControl);
+	if (typeof (_element) != 'undefined' && _element != null) 
+	{
+		if (!HasClass(_element, 'questionBranch_hide'))
+			AddClass(_element, 'questionBranch_hide',true);
+	}
+	
+	//Check FOR SSN COnfirmation question
+	strChildControl = 'questionContainer_CONFIRMFIELD_' + strqid + '__FormText';								
+	_element = document.getElementById(strChildControl);
+	if (typeof (_element) != 'undefined' && _element != null) 
+	{
+		if (!HasClass(_element, 'questionBranch_hide'))
+			AddClass(_element, 'questionBranch_hide',true);
+	}
+	
+	//Hide the DEFAULT QUESTION MAIN ROW..//use this code base to remove the class whoch we added for ROWS AND COLUMNS TO HIDE
+	strRowControl = 'quemainrow_' + strqid + '__FormText';
+	_element = document.getElementById(strRowControl);
+	if (typeof (_element) != 'undefined' && _element != null) 
+	{
+		if (!HasClass(_element, 'questionBranch_hide'))
+			AddClass(_element, 'questionBranch_hide',true);
+	}
+	
+	//Use this  for COnfirm SSN question
+	strRowControl = 'quemainrow_CONFIRMFIELD_' + strqid + '__FormText';
+	_element = document.getElementById(strRowControl);
+	if (typeof (_element) != 'undefined' && _element != null) 
+	{
+		if (!HasClass(_element, 'questionBranch_hide'))
+			AddClass(_element, 'questionBranch_hide',true);
+	}
+	
+}
+
+//This function is used to show the childrens
+function UnHideChildrens(strqid, strChildControlName,strSelectedControlJobId)
+{
+	 var _element;
+	 var strRowControl;
+	 var strChildControl;
+	 
+	_element = document.getElementById(strChildControlName);
+	if (typeof (_element) != 'undefined' && _element != null) 
+	{
+		RemoveClass(_element, 'questionBranch_hide');
+	}
+
+	//Hide the JOB SPECIFIC QUESTION MAIN ROW..//use this code base to remove the class whoch we added for ROWS AND COLUMNS TO HIDE
+	strRowControl = 'quemainrow_' + strqid + '__FormText$' + strSelectedControlJobId;
+	_element = document.getElementById(strRowControl);
+	if (typeof (_element) != 'undefined' && _element != null) 
+	{
+		RemoveClass(_element, 'questionBranch_hide');
+	}
+
+	//Hide the JOB SPECIFIC QUESTION MAIN ROW.. SSN COnfirm question
+	strRowControl = 'quemainrow_CONFIRMFIELD_' + strqid + '__FormText$' + strSelectedControlJobId;
+	_element = document.getElementById(strRowControl);
+	if (typeof (_element) != 'undefined' && _element != null) 
+	{
+		RemoveClass(_element, 'questionBranch_hide');
+	}
+
+
+	//Check FOR DEFAULTS QUESTIONS ALSO...AFTER JOB SPECIFIC QUESTION.. 
+	strChildControl = 'questionContainer_' + strqid + '__FormText';								
+	_element = document.getElementById(strChildControl);
+	if (typeof (_element) != 'undefined' && _element != null) 
+	{
+		RemoveClass(_element, 'questionBranch_hide');
+	}
+	
+	//Use this for SSN onfirm Question
+	strChildControl = 'questionContainer_CONFIRMFIELD_' + strqid + '__FormText';								
+	_element = document.getElementById(strChildControl);
+	if (typeof (_element) != 'undefined' && _element != null) 
+	{
+		RemoveClass(_element, 'questionBranch_hide');
+	}
+	
+	//Remove Class from the div tag present in job specific question confirm field
+	strChildControl = 'questionContainer_CONFIRMFIELD_' + strqid + '__FormText$' + strSelectedControlJobId;								
+	_element = document.getElementById(strChildControl);
+	if (typeof (_element) != 'undefined' && _element != null) 
+	{
+		RemoveClass(_element, 'questionBranch_hide');
+	}
+
+	//Hide the DEFAULT QUESTION MAIN ROW..//use this code base to remove the class whoch we added for ROWS AND COLUMNS TO HIDE
+	strRowControl = 'quemainrow_' + strqid + '__FormText';
+	_element = document.getElementById(strRowControl);
+	if (typeof (_element) != 'undefined' && _element != null) 
+	{
+		RemoveClass(_element, 'questionBranch_hide');
+	}
+	//Use this for SSN confirm questions
+	strRowControl = 'quemainrow_CONFIRMFIELD_' + strqid + '__FormText';
+	_element = document.getElementById(strRowControl);
+	if (typeof (_element) != 'undefined' && _element != null) 
+	{
+		RemoveClass(_element, 'questionBranch_hide');
+	}
+}
+
+function CheckQBForMultipleJobs(pname,qId,jobinfo,qType,src,_childrenToShow)
+{
+	var arrJobsIds;
+	var arrJobs = new Array();
+	var j;
+	var strJobId;
+	var _childrenToShow;
+    var _childrenToHide;
+    var _element;
+    var _qbparentqid;	
+    break;      
+    
+case 'SELECT-ONE':
+case 'SELECT-MULTIPLE': 
+case 'SINGLE-MULTIPLE':
+case 'MULTI-SELECT':    
+            
+    selobj = eval('document.' + formNam
+    var _childArr;
+    var _parentDivElement;
+    var strChildControl;
+	var strChildControlLen;
+	var formElementId;
+	var formElementValueAttribute;
+	var rowElementName;
+	var strQuestionId;
+	var strSelectedControlJobId;
+	
+    var selobj;
+	var selobj2;
+	var option;	
+	var index;
+	var index2;		
+	var strFormName;
+	var FormsValue;
+	var iCtrarray2;	
+	var _childrenToShowExist;
+	var strFormName;
+	var i;
+	var strElementcontainerName;
+	strElementcontainerName = "";
+	
+	//Get the form Name as we have different form name exists on different pages...
+	if (src == "ANSWERQUESTIONS" || src == "REFERRERANSQUESTIONS")
+		strFormName = "frmApply";
+	else if (src == "GQJSQ")
+		strFormName = "frmPage";
+
+			
+	//Set the parent element to append the qhistory attribute
+	strElementcontainerName  = 'questionContainer_'+pname.replace('Question','');
+	//_parentDivElement = document.getElementById(pname);
+	_parentDivElement = document.getElementById(strElementcontainerName);
+	  
+	//For multiple jobs only go this new function...	
+	if( (jobinfo != '') &&  (src == "ANSWERQUESTIONS" || src == "REFERRERANSQUESTIONS" || src == "GQJSQ"))
+	{
+		j = 0;
+		iCtrarray2=jobinfo.split('%%');
+		
+		for(i=0; i!=iCtrarray2.length; i++)
+		{
+			//Populate all jobs in the 
+			if (iCtrarray2[i] != '')
+			{	
+				//Split by Pipe character to get the jobId
+				arrJobsIds = iCtrarray2[i].split('|'); 			
+				arrJobs[j] =  arrJobsIds[0];
+				j = j + 1;
+			}
+		}
+
+	}
+		
+	//Check if the incoming question has any JObid information present (__FormText$JObId)....If not means it is default question..
+	i = 0;
+	if (pname.indexOf('__FormText$') != -1)
+	{
+		//Get the actual jobId from the control Name
+		strSelectedControlJobId = pname.substr((pname.indexOf('__FormText$') + 11), (pname.length - (pname.indexOf('__FormText$') + 11)) );
+		if (strSelectedControlJobId.indexOf('_') != -1)
+			strSelectedControlJobId = strSelectedControlJobId.substr(0,strSelectedControlJobId.indexOf('_'));
+
+		//Hide old children
+		if (_parentDivElement != null && _parentDivElement.getAttribute('qbhistory') != null) 
+		{
+			_childrenToHide = _parentDivElement.getAttribute('qbhistory');
+			if (_childrenToHide != '') 
+			{
+				_childArr = _childrenToHide.split(",");
+				for (i = 0; i < _childArr.length; i++) 
+				{	
+					//CHECK FOR JOB SPECIFIC QUESTIONS.BYD DEFAULT Hide the children ... build the ControlName as with FormText$ and jobid
+					strChildControl = 'questionContainer_' + _childArr[i] + '__FormText$' + strSelectedControlJobId;								
+				
+					HideChildrens(_childArr[i],strChildControl,strSelectedControlJobId);
+					
+					//Hide all the grand childrens
+					hideNestedChildrenForMultiplejobs(_childArr[i],strChildControl,strSelectedControlJobId,strFormName);
+					
+					//Loop through all jobs and make sure that this default question is not a child of another parent from one of job
+					// and one of the job's question option is selected then in that case we don't need this default question to hidden..					
+					UnHideCommonDefaultChildQuestion(pname,qId,jobinfo,qType,src,_childArr[i]);
+					
+				}
+			}
+			//Clear history
+			_parentDivElement.setAttribute('qbhistory', '');
+		}						
+		
+		//Show new children
+		if (_childrenToShow != null && _childrenToShow != '' && _childrenToShow != '0' && typeof (_childrenToShow) != 'undefined') 
+		{
+		
+			_childArr = _childrenToShow.split(",");
+			i=0;
+			for (i = 0; i < _childArr.length; i++) 
+			{
+				//CHECK FOR JOB SPECIFIC QUESTIONS.BYD DEFAULT
+					////Hide the children ... build the ControlName as with FormText$ and jobid
+					//build the ControlName as with FormText$ and jobid
+					strChildControl = 'questionContainer_' + _childArr[i] + '__FormText$' + strSelectedControlJobId;
+													
+					
+					//This function is used to show the childrens
+					UnHideChildrens(_childArr[i],strChildControl,strSelectedControlJobId);
+										
+					//This is used to show the grand childrens of this child
+					showNestedChildrenForMultipleJobs(_childArr[i],strChildControl,strSelectedControlJobId,strFormName)
+					
+			}
+			//Store new children in the history attribute
+			_parentDivElement.setAttribute('qbhistory', _childrenToShow);
+		}
+		
+		//***THIS IS FOR PRE-SELECTED VALUE.. because we are making the qbchild as 0 ( FROM COM) for child questions if parent option is preselected..
+		//if no option is selected for the parent then we need to hide the all children.
+		//This is when we selected parent and child option and saved it and when it is loaded again and if candidate
+		//selects unselect the answer then we need to hide all children of that parent..
+		if (_childrenToShow == '' && (_parentDivElement != null && _parentDivElement.getAttribute('qbhistory') == null))
+		{
+			//Get all answers qchildren node
+			selobj = eval('document.' + strFormName + '.' + pname);
+			if (selobj)
+			{					
+				for (index=0; index < selobj.length; index++) 
+				{
+					if (selobj[index].getAttribute('qbchildren') != '' && selobj[index].getAttribute('qbchildren') != null)						
+						_childrenToShow = (_childrenToShow != '' ? _childrenToShow + ',' + selobj[index].getAttribute('qbchildren') : selobj[index].getAttribute('qbchildren'));					
+				}
+			}
+			
+			//Hide all children by looping through all selected options.
+			if (_childrenToShow != null && _childrenToShow != '' && _childrenToShow != '0' && typeof (_childrenToShow) != 'undefined') 
+			{
+				_childArr = _childrenToShow.split(",");
+				i=0;
+				for (i = 0; i < _childArr.length; i++) 
+				{	
+					//CHECK FOR JOB SPECIFIC QUESTIONS.BYD DEFAULT Hide the children ... build the ControlName as with FormText$ and jobid
+					strChildControl = 'questionContainer_' + _childArr[i] + '__FormText$' + strSelectedControlJobId;								
+					
+					//This function will hide the children based in the child question Id
+					HideChildrens(_childArr[i],strChildControl,strSelectedControlJobId);
+					
+					//Hide all the grand childrens
+					hideNestedChildrenForMultiplejobs(_childArr[i],strChildControl,strSelectedControlJobId,strFormName);
+					
+					//Loop through all jobs and make sure that this default question is not a child of another parent from one of job
+					// and one of the job's question option is selected then in that case we don't need this default question to hidden..					
+					UnHideCommonDefaultChildQuestion(pname,qId,jobinfo,qType,src,_childArr[i]);
+					
+				}
+				//Store new children in the history attribute
+				_parentDivElement.setAttribute('qbhistory', '');
+			}		
+		}
+	}
+	else //this is default question OR Basic TG Questions page....which does not have $ sign and job id
+	{		
+		//Hide old children
+		if (_parentDivElement != null && _parentDivElement.getAttribute('qbhistory') != null) 
+		{
+			_childrenToHide = _parentDivElement.getAttribute('qbhistory');
+			if (_childrenToHide != '') 
+			{
+				_childArr = _childrenToHide.split(",");
+				i=0;
+				for (i = 0; i < _childArr.length; i++) 
+				{	
+					//HANDLE THE BASIC TG SCENARIO AS JobId is not coming in this case
+					if (arrJobs.length ==0)
+					{
+							strChildControl = 'questionContainer_' + _childArr[i] + '__FormText';								
+							//This function will hide the children based in the child question Id
+							HideChildrens(_childArr[i],strChildControl,'');
+							
+							//Hide all the grand childrens
+							hideNestedChildrenForMultiplejobs(_childArr[i],strChildControl,'',strFormName);
+					
+					
+					}
+					else
+					{
+						//Loop through all jobs because we don't know what job has child questions configured..
+						for (k = 0; k < arrJobs.length; k++) 
+						{
+							strJobId = arrJobs[k];
+							//CHECK FOR JOB SPECIFIC QUESTIONS.BYD DEFAULT
+							////Hide the children ... build the ControlName as with FormText$ and jobid
+							strChildControl = 'questionContainer_' + _childArr[i] + '__FormText$' + strJobId;	
+							
+							//This function will hide the children based in the child question Id
+							HideChildrens(_childArr[i],strChildControl,strJobId);
+							
+							//Hide all the grand childrens
+							hideNestedChildrenForMultiplejobs(_childArr[i],strChildControl,strJobId,strFormName);
+							
+						}
+					}
+				}
+			}
+			//Clear history
+			_parentDivElement.setAttribute('qbhistory', '');
+		}						
+		
+		//Show new children
+		if (_childrenToShow != null && _childrenToShow != '' && _childrenToShow != '0' && typeof (_childrenToShow) != 'undefined') 
+		{
+			_childArr = _childrenToShow.split(",");
+			i=0;
+			for (i = 0; i < _childArr.length; i++) 
+			{
+					//HANDLE BASIC TG ANswer questions page as we don't have job present in basic TG
+					if (arrJobs.length == 0 )
+					{
+						strChildControl = 'questionContainer_' + _childArr[i] + '__FormText';		
+							
+						//This function is used to show the childrens
+						UnHideChildrens(_childArr[i],strChildControl,'');
+						
+						//This is used to show the grand childrens of this child
+						showNestedChildrenForMultipleJobs(_childArr[i],strChildControl,'',strFormName)
+							
+					}
+					else
+					{
+						//Loop through all jobs because we don't know what job has child questions configured..
+						for (k = 0; k < arrJobs.length; k++) 
+						{
+							strJobId = arrJobs[k];
+							
+							//CHECK FOR JOB SPECIFIC QUESTIONS.BYD DEFAULT
+							////Hide the children ... build the ControlName as with FormText$ and jobid
+							//build the ControlName as with FormText$ and jobid
+							strChildControl = 'questionContainer_' + _childArr[i] + '__FormText$' + strJobId;		
+							
+							//This function is used to show the childrens
+							UnHideChildrens(_childArr[i],strChildControl,strJobId);
+							
+							//This is used to show the grand childrens of this child
+							showNestedChildrenForMultipleJobs(_childArr[i],strChildControl,strJobId,strFormName)
+					
+						}
+					}
+			}
+			//Store new children in the history attribute
+			_parentDivElement.setAttribute('qbhistory', _childrenToShow);
+		}
+		
+		//***THIS IS FOR PRE-SELECTED VALUE.. because we are making the qbchild as 0 ( FROM COM) for child questions if parent option is preselected..
+		//if no option is selected for the parent then we need to hide the all children.
+		//This is when we selected parent and child option and saved it and when it is loaded again and if candidate
+		//selects unselect the answer then we need to hide all children of that parent..		
+		if (_childrenToShow == '' && (_parentDivElement != null && _parentDivElement.getAttribute('qbhistory') == null))
+		{
+			//Get all answers qchildren node
+			selobj = eval('document.' + strFormName + '.' + pname);
+			if (selobj)
+			{					
+				for (index=0; index < selobj.length; index++) 
+				{
+					if (selobj[index].getAttribute('qbchildren') != '' && selobj[index].getAttribute('qbchildren') != null)						
+						_childrenToShow = (_childrenToShow != '' ? _childrenToShow + ',' + selobj[index].getAttribute('qbchildren') : selobj[index].getAttribute('qbchildren'));					
+				}
+			}
+			//Hide all new children
+			if (_childrenToShow != null && _childrenToShow != '' && _childrenToShow != '0' && typeof (_childrenToShow) != 'undefined') 
+			{
+				_childArr = _childrenToShow.split(",");
+				i=0;
+				for (i = 0; i < _childArr.length; i++) 
+				{	
+					//HANDLE BASIC TG Scenario as we don't have job on BASIC TGs.
+					if (arrJobs.length == 0)
+					{
+							strChildControl = 'questionContainer_' + _childArr[i] + '__FormText';
+							
+							//This function will hide the children based in the child question Id
+							HideChildrens(_childArr[i],strChildControl,'');
+							
+							//Hide all the grand childrens
+							hideNestedChildrenForMultiplejobs(_childArr[i],strChildControl,'',strFormName);
+							
+					}
+					else
+					{
+						//Loop through all jobs because we don't know what job has child questions configured..
+						for (k = 0; k < arrJobs.length; k++) 
+						{
+							strJobId = arrJobs[k];
+							//CHECK FOR JOB SPECIFIC QUESTIONS.BYD DEFAULT
+							////Hide the children ... build the ControlName as with FormText$ and jobid
+							//build the ControlName as with FormText$ and jobid
+							strChildControl = 'questionContainer_' + _childArr[i] + '__FormText$' + strJobId;
+							
+							//This function will hide the children based in the child question Id
+							HideChildrens(_childArr[i],strChildControl,strJobId);
+							
+							//Hide all the grand childrens
+							hideNestedChildrenForMultiplejobs(_childArr[i],strChildControl,strJobId,strFormName);
+							
+						}
+					}
+				}				
+				//Clear history
+				_parentDivElement.setAttribute('qbhistory', '');
+			}
+		}
+		
+	}
+	
+}
+
+//LDP:074 QB this function is used to unhide the default common question based on the options selected for all
+// job questions..
+function UnHideCommonDefaultChildQuestion(pname,qId,jobinfo,qType,src,_childrenToShow)
+{
+	var _childrenToShowExist;
+	var arrJobsIds;
+	var arrJobs = new Array();
+	var j;
+	var strJobId;
+    var _childrenToHide;
+    var _element;
+    var _childArr;
+    var strChildControl;
+	var rowElementName;
+	var strQuestionId;
+	var strSelectedControlJobId;
+	
+    var selobj;
+	var selobj2;
+	var option;	
+	var index;
+	var index2;		
+	var strFormName;
+	var iCtrarray2;	
+	var _childrenToShowExist;
+	var strFormName;
+	var strDefaultChildControl;
+	var i;
+	
+	
+	//Get the form Name as we have different form name exists on different pages...
+	if (src == "ANSWERQUESTIONS" || src == "REFERRERANSQUESTIONS")
+		strFormName = "frmApply";
+	else if (src == "GQJSQ")
+		strFormName = "frmPage";
+		
+	//Get the actual jobId from the control Name
+	strSelectedControlJobId = pname.substr((pname.indexOf('__FormText$') + 11), (pname.length - (pname.indexOf('__FormText$') + 11)) );
+	if (strSelectedControlJobId.indexOf('_') != -1)
+		strSelectedControlJobId = strSelectedControlJobId.substr(0,strSelectedControlJobId.indexOf('_'));
+
+	
+	//For multiple jobs only go this new function...	
+	if( (jobinfo != '') &&  (src == "ANSWERQUESTIONS" || src == "REFERRERANSQUESTIONS"))
+	{
+		iCtrarray2=jobinfo.split('%%');
+		j = 0;
+		for(i=0; i!=iCtrarray2.length; i++)
+		{
+			//Populate all jobs in the 
+			if (iCtrarray2[i] != '')
+			{	
+				//Split by Pipe character to get the jobId
+				arrJobsIds = iCtrarray2[i].split('|'); 			
+				arrJobs[j] =  arrJobsIds[0];
+				j = j + 1;
+			}
+		}
+
+	}
+	
+	_childrenToShowExist = "";
+	i = 0;
+	
+			
+	for (b= 0; b < arrJobs.length; b++) 
+	{
+		strJobId = arrJobs[b];
+		//Loop through all options of that job.. and find out if any of the option has qchildren attribute contains this
+		// question Id and if it does then do not hide it..
+		//CHECK FOR JOB SPECIFIC QUESTIONS.BYD DEFAULT Hide the children ... build the ControlName as with FormText$ and jobid
+		strChildControl = 'questionContainer_' + qId + '__FormText$' + strJobId;
+		_element = document.getElementById(strChildControl);
+		if (typeof (_element) != 'undefined' && _element != null && strJobId != strSelectedControlJobId) 
+		{	
+			//Check FOR DEFAULTS QUESTIONS ALSO...AFTER JOB SPECIFIC QUESTION.. 
+			strDefaultChildControl  = 'questionContainer_' +_childrenToShow + '__FormText';	
+								
+			_element = document.getElementById(strDefaultChildControl );
+			if (typeof (_element) != 'undefined' && _element != null) 
+			{
+				pname = pname.replace(strSelectedControlJobId,strJobId);							
+				//Loop through all options available for this parent question..
+				switch(qType) 
+				{	
+					case "RADIO":
+					case "CHECKBOX":	
+							//Get all checked checkboxes
+							selobj = eval('document.' + strFormName + '.' + pname);
+							if (selobj)
+							{					
+								for (index=0; index < selobj.length; index++) 
+								{						
+									if (selobj[index].checked)
+										_childrenToShowExist = (_childrenToShowExist != '' ? _childrenToShowExist + ',' + selobj[index].getAttribute('qbchildren') : selobj[index].getAttribute('qbchildren'));
+								}
+							}		
+						break;      
+						
+					case 'SELECT':
+					case 'SINGLE-SELECT':
+					case 'MULTI-SELECT':    											
+						selobj = eval('document.' + strFormName + '.' + pname);
+						if (selobj)
+						{					
+							for (index=0; index < selobj.length; index++) 
+							{						
+								if (selobj[index].selected)
+									_childrenToShowExist = (_childrenToShowExist != '' ? _childrenToShowExist + ',' + selobj[index].getAttribute('qbchildren') : selobj[index].getAttribute('qbchildren'));
+							}
+						}		
+						break;    
+				}
+				
+				//if this incoming questions present in the any of the selected option of another job then do not remove the default question..
+				if (_childrenToShowExist.indexOf(_childrenToShow) != -1 )
+				{	
+					//Check FOR DEFAULTS QUESTIONS ALSO...AFTER JOB SPECIFIC QUESTION.. 
+					strChildControl = 'questionContainer_' + _childrenToShow + '__FormText';								
+					_element = document.getElementById(strChildControl);
+					if (typeof (_element) != 'undefined' && _element != null) 
+					{
+						RemoveClass(_element, 'questionBranch_hide');
+					}
+					
+					//Check FOR SSN CONFIRM QUESTION for DEFAULTS QUESTIONS ALSO...AFTER JOB SPECIFIC QUESTION.. 
+					strChildControl = 'questionContainer_CONFIRMFIELD_' + _childrenToShow + '__FormText';								
+					_element = document.getElementById(strChildControl);
+					if (typeof (_element) != 'undefined' && _element != null) 
+					{
+						RemoveClass(_element, 'questionBranch_hide');
+					}
+			        
+					//Hide the DEFAULT QUESTION MAIN ROW..//use this code base to remove the class whoch we added for ROWS AND COLUMNS TO HIDE
+					strRowControl = 'quemainrow_' + _childrenToShow + '__FormText';
+					_element = document.getElementById(strRowControl);
+					if (typeof (_element) != 'undefined' && _element != null) 
+					{
+						RemoveClass(_element, 'questionBranch_hide');
+					}
+					
+					//Use this SSN COnfirmation question
+					strRowControl = 'quemainrow_CONFIRMFIELD_' + _childrenToShow + '__FormText';
+					_element = document.getElementById(strRowControl);
+					if (typeof (_element) != 'undefined' && _element != null) 
+					{
+						RemoveClass(_element, 'questionBranch_hide');
+					}
+				}
+			}
+		}
+				
+	}
+	
+}
+
+function executeQB() {
+    if (typeof pQBArr != 'undefined' && typeof pQBArr.length != 'undefined' && pQBArr.length > 0) 
+    {
+        for (i = 0; i < pQBArr.length; i++) 
+        {
+            var _childElement = document.getElementById(pQBArr[i]);
+            if (typeof _childElement != 'undefined' && _childElement != null)
+                checkQB(_childElement);
+        }
+    }
+}
+
+
+//THIS Function is used to hide the rows and columns of those controls which we are hiding...
+function HideRowsAndColumns(src,qId) 
+{
+	
+	//Hide the MAIN ROW
+	_element = document.getElementById('quemainrow_' + qId);
+	if (typeof (_element) != 'undefined' && _element != null) 
+	{
+		if (!HasClass(_element, 'questionBranch_hide'))
+			AddClass(_element, 'questionBranch_hide',true);
+	}
+	//Use this for SSN COnfirmation field
+	_element = document.getElementById('quemainrow_CONFIRMFIELD_' + qId);
+	if (typeof (_element) != 'undefined' && _element != null) 
+	{
+		if (!HasClass(_element, 'questionBranch_hide'))
+			AddClass(_element, 'questionBranch_hide',true);
+	}
+	
+	
+}			
+
+
+//THIS Function is used to UNHODE the rows and columns of those controls which we are hiding...
+function UnHideRowsAndColumns(src,qId) 
+{	
+	//enable the Rows which we hide
+	_element = document.getElementById('quemainrow_' + qId);
+	if (typeof (_element) != 'undefined' && _element != null) 
+	{
+		RemoveClass(_element, 'questionBranch_hide');
+	}
+	
+	//Use this for SSN CONfirmation field	
+			break;      
+			
+            case 'SELECT-ONE':
+            case 'SELECT-MULTIPLE': 
+            case 'SINGLE-MULTIPLE':
+            case 'MULTI-SELECT':    
+                        
+                selobj = eval('document.' + formNam
+	_element = document.getElementById('quemainrow_CONFIRMFIELD_' + qId);
+	if (typeof (_element) != 'undefined' && _element != null) 
+	{
+		RemoveClass(_element, 'questionBranch_hide');
+	}
+ }
+ 
+ 
+ 
+// ----------------------------------------------------------------------------
+// HasClass
+//
+// Description : returns boolean indicating whether the object has the class name
+//    built with the understanding that there may be multiple classes
+//
+// Arguments:
+//    objElement              - element to manipulate
+//    strClass                - class name to add
+//
+function HasClass(objElement, strClass)
+{
+
+   // if there is a class
+   if ( objElement.className )
+   {
+      // the classes are just a space separated list, so first get the list
+      var arrList = objElement.className.split(' ');
+
+      // get uppercase class for comparison purposes
+      var strClassUpper = strClass.toUpperCase();
+
+      // find all instances and remove them
+      for ( var i = 0; i < arrList.length; i++ )
+      {
+         // if class found
+         if ( arrList[i].toUpperCase() == strClassUpper )
+         {
+            // we found it
+            return true;
+         }
+      }
+    }
+   // if we got here then the class name is not there
+   return false;
+
+}
+
+
+// ----------------------------------------------------------------------------
+// AddClass
+//
+// Description : adds a class to the class attribute of a DOM element
+//    built with the understanding that there may be multiple classes
+//
+// Arguments:
+//    objElement              - element to manipulate
+//    strClass                - class name to add
+//
+function AddClass(objElement, strClass, blnMayAlreadyExist)
+{
+
+   // if there is a class
+   if ( objElement.className )
+   {
+
+      // the classes are just a space separated list, so first get the list
+      var arrList = objElement.className.split(' ');
+
+      // if the new class name may already exist in list
+      if ( blnMayAlreadyExist )
+      {
+         // get uppercase class for comparison purposes
+         var strClassUpper = strClass.toUpperCase();
+
+         // find all instances and remove them
+         for ( var i = 0; i < arrList.length; i++ )
+         {
+
+            // if class found
+            if ( arrList[i].toUpperCase() == strClassUpper )
+            {
+               // remove array item
+               arrList.splice(i, 1);
+
+               // decrement loop counter as we have adjusted the array's contents
+               i--;
+
+            }
+         }
+      }
+      // add the new class to end of list
+      arrList[arrList.length] = strClass;
+
+      // add the new class to beginning of list
+      //arrList.splice(0, 0, strClass);
+      
+      // assign modified class name attribute
+      objElement.className = arrList.join(' ');
+
+   }
+   // if there was no class
+   else
+   {
+      // assign modified class name attribute      
+      objElement.className = strClass;
+   
+   }
+
+}
+
+
+// ----------------------------------------------------------------------------
+// RemoveClass
+//
+// Description : removes a class from the class attribute of a DOM element
+//    built with the understanding that there may be multiple classes
+//
+// Arguments:
+//    objElement              - element to manipulate
+//    strClass                - class name to remove
+//
+function RemoveClass(objElement, strClass)
+{
+
+   // if there is a class
+   if ( objElement.className )
+   {
+
+      // the classes are just a space separated list, so first get the list
+      var arrList = objElement.className.split(' ');
+
+      // get uppercase class for comparison purposes
+      var strClassUpper = strClass.toUpperCase();
+
+      // find all instances and remove them
+      for ( var i = 0; i < arrList.length; i++ )
+      {
+
+        // if class found
+        if ( arrList[i].toUpperCase() == strClassUpper )
+        {
+
+			// remove array item
+			arrList.splice(i, 1);
+			// decrement loop counter as we have adjusted the array's contents
+			i--;
+        }
+      }
+      // assign modified class name attribute
+      objElement.className = arrList.join(' ');
+   }
+   // if there was no class
+   // there is nothing to remove
+}
+
+//LSP:074 QB This function is used to decide if we go for validation or not for all controls
+//LSP:074 QB This function is used to decide if we go for validation or not for all controls
+function ValidateRequiredControlsforQB(controlName,strDateControlPrefix)
+{
+    var bReturn = false;	
+	var strJobId;
+	strJobId = "";
+	
+	//debugger;
+	
+	//For required controls this controlName is coming as empty..
+	if ((controlName == "" || controlName == null) && strDateControlPrefix != "")		
+	{
+		var arrJobs;
+		//document.frmLogin.Date_<xsl:value-of select="QuestionId"/>_JobId
+		arrJobs = strDateControlPrefix.split("_");
+		strQuestionId = arrJobs[1];	
+		if (arrJobs.length > 1)
+			strJobId = arrJobs[2];			
+	}
+	
+	//LDP:074 QB starts If this control has questionBranch_hide class present then don't do the validation..	
+	//IF THIS IS FUNCTION IS CALLED FROM ANSWER QUESTIONS PAGE as we have different naming conventions for div tag
+	//Build the control name
+	//Remove all the hidden children from the DOM before submit - For Question Branching.
+	var ChildControlName; 
+			
+	if(strJobId == "")
+	{
+		if (controlName == null || controlName == 'undefined' || controlName == "")
+		{
+			var _childElement = document.getElementById('questionContainer_' + strQuestionId);
+			if(typeof _childElement !='undefined' && _childElement!=null)
+			{
+				if (HasClass(_childElement, 'questionBranch_hide')) 					
+					bReturn = true;	
+			}
+			var _childElement = document.getElementById('questionContainer_' + strQuestionId + '__FormText');
+			if(typeof _childElement !='undefined' && _childElement!=null)
+			{
+				if (HasClass(_childElement, 'questionBranch_hide')) 					
+					bReturn = true;
+			}	
+		}		
+		else if (controlName.indexOf('FormText') == -1 )//DEFAULT QUESTIONS FLOW
+		{
+			var _childElement = document.getElementById('questionContainer_' + strQuestionId);
+			if(typeof _childElement !='undefined' && _childElement!=null)
+			{
+				if (HasClass(_childElement, 'questionBranch_hide')) 					
+					bReturn = true;	
+			}
+			//GQ-JSQ OR ANSWER QUESTIONS this is coming as empty hence check for this tag..
+			if (controlName == "")
+			{
+				var _childElement = document.getElementById('questionContainer_' + strQuestionId + '__FormText');
+				if(typeof _childElement !='undefined' && _childElement!=null)
+				{
+					if (HasClass(_childElement, 'questionBranch_hide')) 					
+						bReturn = true;
+				}	
+			}
+		}
+		else	//ANSWER QUESTIONS FLOWS WHERE JOBID'S IS NOT PRESENT
+		{
+				var _childElement = document.getElementById('questionContainer_' + strQuestionId + '__FormText');
+				if(typeof _childElement !='undefined' && _childElement!=null)
+				{
+					if (HasClass(_childElement, 'questionBranch_hide')) 					
+						bReturn = true;
+				}
+		}
+	}
+	else	//ANSWER QUESTIONS FLOW WHERE WE APPEND THE JOBID
+	{
+			if (controlName == null || controlName == 'undefined' || controlName == "")
+			{
+				var _childElement = document.getElementById('questionContainer_' + strQuestionId + '__FormText$' + strJobId);
+				if(typeof _childElement !='undefined' && _childElement!=null)
+				{
+					if (HasClass(_childElement, 'questionBranch_hide')) 					
+						bReturn = true;	
+				}
+				
+				_childElement = document.getElementById('questionContainer_' + strQuestionId + '__FormText');
+				if(typeof _childElement !='undefined' && _childElement!=null)
+				{
+					if (HasClass(_childElement, 'questionBranch_hide')) 					
+						bReturn = true;
+				}
+			}		
+			else
+			{
+				var _childElement = document.getElementById('questionContainer_' + strQuestionId + '__FormText$' + strJobId);
+				if(typeof _childElement !='undefined' && _childElement!=null)
+				{
+					if (HasClass(_childElement, 'questionBranch_hide')) 					
+						bReturn = true;
+				}
+			}
+	}
+	
+	return bReturn;
+}	
+
+function ValidateControlsforQB(controlName)
+{
+    var bReturn = false;	
+	var strJobId;
+	strJobId = "";
+	
+	//if control name contains $ means it is coming from Answer Question pages..
+	if (controlName.indexOf('$') != -1)
+	{
+		var arrJobs;
+		arrJobs = controlName.split("$");
+		strJobId = arrJobs[1];		
+		
+		//For checkbox and other controls it comes a jobsId_1
+		if (strJobId.indexOf('_') != -1)
+		{
+			arrJobs = strJobId.split("_");
+			strJobId = arrJobs[0];		
+		}	
+	}
+	
+	//Get the question Id from the controlName
+	var strTemp;
+	strTemp = controlName.split("_");
+	if (strTemp[0] != "Question")
+		strQuestionId = strTemp[0].substr(8);
+	else 
+		strQuestionId = strTemp[1];
+	
+	//LDP:074 QB starts If this control has questionBranch_hide class present then don't do the validation..	
+	//IF THIS IS FUNCTION IS CALLED FROM ANSWER QUESTIONS PAGE as we have different naming conventions for div tag
+	//Build the control name
+	//Remove all the hidden children from the DOM before submit - For Question Branching.
+	var ChildControlName; 
+			
+		if(strJobId == "")
+		{
+			if (controlName.indexOf('FormText') == -1 )//DEFAULT QUESTIONS FLOW
+			{
+				var _childElement = document.getElementById('questionContainer_' + strQuestionId);
+					if(typeof _childElement !='undefined' && _childElement!=null)
+					{
+						if (HasClass(_childElement, 'questionBranch_hide')) 					
+							bReturn = true;	
+					}
+			}
+			else	//ANSWER QUESTIONS FLOWS WHERE JOBID'S IS NOT PRESENT
+			{
+                var _childElement = document.getElementById('questionContainer_' + strQuestionId + '__FormText');
+					if(typeof _childElement !='undefined' && _childElement!=null)
+					{
+						if (HasClass(_childElement, 'questionBranch_hide')) 					
+							bReturn = true;
+					}
+			}
+		}
+		else	//ANSWER QUESTIONS FLOW WHERE WE APPEND THE JOBID
+		{
+			var _childElement = document.getElementById('questionContainer_' + strQuestionId + '__FormText$' + strJobId);
+				if(typeof _childElement !='undefined' && _childElement!=null)
+				{
+					if (HasClass(_childElement, 'questionBranch_hide')) 					
+						bReturn = true;
+				}
+		}
+	return bReturn;
+}	
+
+//This function is used to get the field and clear all its child field
+function ClearAllQBChilds(formName,qType,pname,src,strJobInfo)
+{
+	var _childrenToShow;
+	var selobj;
+	var qType;
+	var index;
+	var pname;
+	var _childArr;
+	var _element;					
+	var _childQId;
+	var src;
+	
+	_childrenToShow = "";
+	
+	
+	//src = "REFERRALATTACHFORM";	
+	//REFERRERANSQUESTIONS
+	
+	//debugger;
+	
+	switch(qType.toUpperCase()) 
+	{
+		
+		case "RADIO":
+		case "CHECKBOX":	
+				//Get all checked checkboxes
+				selobj = eval('document.' + formName + '.' + pname);
+				if (selobj)
+				{					
+					for (index=0; index < selobj.length; index++) 
+					{						
+						if (selobj[index].checked)
+						{	
+							if  (selobj[index].getAttribute('qbchildren') != null && selobj[index].getAttribute('qbchildren') != "" && selobj[index].getAttribute('qbchildren') != 'undefined')		
+								_childrenToShow = (_childrenToShow != '' ? _childrenToShow + ',' + selobj[index].getAttribute('qbchildren') : selobj[index].getAttribute('qbchildren'));
+						}
+					}
+				}		
+			break;      
+			
+		case 'SELECT-ONE':
+		case 'SELECT-MULTIPLE': 
+		case 'SINGLE-MULTIPLE':
+		case 'MULTI-SELECT':    
+					
+			selobj = eval('document.' + formName + '.' + pname);
+			if (selobj)
+			{					
+				for (index=0; index < selobj.length; index++) 
+				{						
+					if (selobj[index].selected)
+					{
+						//For thes flow we jsut store the value as it is										
+						if  (selobj[index].getAttribute('qbchildren') != null && selobj[index].getAttribute('qbchildren') != "" && selobj[index].getAttribute('qbchildren') != 'undefined')		
+							_childrenToShow = (_childrenToShow != '' ? _childrenToShow + ',' + selobj[index].getAttribute('qbchildren') : selobj[index].getAttribute('qbchildren'));
+							
+					}
+				}
+			}		
+			break;    
+			
+		default:
+			_childrenToShow = "";
+	}
+
+	
+	if (_childrenToShow != null && _childrenToShow != '' && _childrenToShow != '0' && typeof (_childrenToShow) != 'undefined') 
+	{
+ 		_childArr = _childrenToShow.split(",");
+		for (i = 0; i < _childArr.length; i++) 
+		{
+			_childQId = _childArr[i];
+			
+            //enable the children
+			_element = document.getElementById('questionContainer_' + _childQId);
+			if (typeof (_element) != 'undefined' && _element != null) 
+			{
+				if (!HasClass(_element, 'questionBranch_hide'))
+					AddClass(_element, 'questionBranch_hide',true);
+			}
+			
+			//Use same thing for SSN COnfirm question if present
+			_element = document.getElementById('questionContainer_CONFIRMFIELD_' + _childQId);
+			if (typeof (_element) != 'undefined' && _element != null) 
+			{
+				if (!HasClass(_element, 'questionBranch_hide'))
+					AddClass(_element, 'questionBranch_hide',true);
+			}
+			
+			//use this code base to remove the class whoch we added for ROWS AND COLUMNS TO HIDE
+			HideRowsAndColumns(src,_childQId);			
+			
+			//Support BASIC TG QUESTIONS FORMS ALso as in that case jobId is coming as empty
+			if( (strJobInfo != '') ||  (src == "REFERRERANSQUESTIONS"))
+			{		
+				//enable the children
+				_element = document.getElementById('questionContainer_' + _childQId + '__FormText');
+				if (typeof (_element) != 'undefined' && _element != null) 
+				{
+					if (!HasClass(_element, 'questionBranch_hide'))
+						AddClass(_element, 'questionBranch_hide',true);
+				}
+				
+				//Use same thing for SSN COnfirm question if present
+				_element = document.getElementById('questionContainer_CONFIRMFIELD_' + _childQId + '__FormText');
+				if (typeof (_element) != 'undefined' && _element != null) 
+				{
+					if (!HasClass(_element, 'questionBranch_hide'))
+						AddClass(_element, 'questionBranch_hide',true);
+				}
+				
+				//Call this function to hide all other childrens
+				clearAllQBFieldForAnswerQuestion(pname,_childQId,strJobInfo);
+				//CheckQBForMultipleJobs(pname,_childQId,strJobInfo,qType,src,_childrenToShow);			
+				//return;		
+			}
+			else
+			{
+				//Now check if the incoming question is having children associated ( check for grand children of main incoming question)
+				hideNestedChildren(src,_childQId)							
+			}
+		}
+	}
+}
+
+//LDP:074 Field Help Text Functions
+
+function clearAllQBFieldForAnswerQuestion(pname,_childQId,strJobInfo)
+{
+	var arrJobsIds;
+	var arrJobs = new Array();
+	var k;
+	var strJobId = "";
+	var strChildControl = "";
+	var iCtrarray2;	
+	var j = 0;
+	var i = 0;
+		
+	//debugger;
+	
+	if (strJobInfo != '')
+	{
+			j = 0;
+			iCtrarray2=strJobInfo.split('%%');
+			
+			for(i=0; i!=iCtrarray2.length; i++)
+			{
+				//Populate all jobs in the 
+				if (iCtrarray2[i] != '')
+				{	
+					//Split by Pipe character to get the jobId
+					arrJobsIds = iCtrarray2[i].split('|'); 			
+					arrJobs[j] =  arrJobsIds[0];
+					j = j + 1;
+				}
+			}
+
+	}
+
+
+	//Loop through all jobs because we don't know what job has child questions configured..
+	for (k = 0; k < arrJobs.length; k++) 
+	{
+		strJobId = arrJobs[k];
+		//CHECK FOR JOB SPECIFIC QUESTIONS.BYD DEFAULT
+		////Hide the children ... build the ControlName as with FormText$ and jobid
+		strChildControl = 'questionContainer_' + _childQId + '__FormText$' + strJobId;	
+		
+		//This function will hide the children based in the child question Id
+		HideChildrens(_childQId,strChildControl,strJobId);
+		
+		//Hide all the grand childrens
+		hideNestedChildrenForMultiplejobs(_childQId,strChildControl,strJobId,'frmApply');
+		
+	}
+	
+	//Check if that exists as Default questions..	
+	strChildControl = 'questionContainer_' + _childQId + '__FormText';
+							
+	//This function will hide the children based in the child question Id
+	HideChildrens(_childQId,strChildControl,'');
+
+	//Hide all the grand childrens
+	hideNestedChildrenForMultiplejobs(_childQId,strChildControl,'','frmApply');
+
+}
+
+
+function showFieldHelp(oArg1, bodyText, validationMessage) {
+	
+    var MARGIN_X = 10,
+        MARGIN_Y = 4,
+        DEFAULT_BODY_TEXT = "No specific help exists for this question.  Would you like to <a href='http://google.com'>search</a> for help?",
+        helpLink = validationMessage ? oArg1 : YAHOO.util.Event.getTarget(oArg1),
+        isHelpClick = (helpLink.className == "FieldhelpLink"),
+        modal = validationMessage ? true : false,
+        offsetX,
+        offsetY;
+    
+    if( ! isHelpClick && ! bodyText )
+		return;
+    
+    createHelpOverlayIfNeeded();
+    
+	if (isHelpClick)
+		bodyText = Dom.getFirstChild(helpLink).innerHTML;
+		
+	helpOverlay.setBody(bodyText || DEFAULT_BODY_TEXT);//Note that body is always present, but on instantiation header is not.     
+
+    helpOverlay.render(document.body);
+	
+    if (validationMessage)
+    {
+        offsetX = Dom.getX(helpLink) + helpLink.offsetWidth + MARGIN_X;
+        offsetY = Dom.getY(helpLink);
+    }
+    else
+    {
+        if (isHelpClick)
+        {  
+            offsetX = Dom.getX(helpLink) + helpLink.offsetWidth + MARGIN_X;
+            offsetY = Dom.getY(helpLink) - helpOverlay.element.offsetHeight - MARGIN_Y;
+        }
+        else
+        {
+            return;
+        }
+    }
+    
+    
+    helpOverlay.cfg.setProperty("x", offsetX);
+    helpOverlay.cfg.setProperty("y", offsetY);
+    helpOverlay.cfg.setProperty("modal", modal);
+    
+    helpOverlay.show();
+}
+function createHelpOverlayIfNeeded()
+{
+    if (!window.helpOverlay)
+    {
+        var aHelpLinks = Dom.getElementsByClassName("help", "a");
+        
+        window.helpOverlay = new YAHOO.widget.Panel("helpOverlay",
+        {
+            context: [aHelpLinks, "tl", "bl", ["beforeShow", "windowResize"]],
+            visible: false,
+            width: "200px",
+            constrainToViewport: true,
+            modal: true
+        });
+    }
+}
+function DisplayQBChildren()
+{
+    var childNodes;
+    var childNodesArr = new Array(); 
+    var viewchildarr=new Array();   
+    //Added the logic to show the children only if parent question is visible
+    if (typeof cpview_cQBArr!='undefined'&&typeof cpview_cQBArr.length!='undefined'&&cpview_cQBArr.length>0)
+    {
+        for (i=0; i<cpview_cQBArr.length; i++)
+        {
+            if (cpview_cQBArr[i].indexOf("_") != -1)
+		    {
+                viewchildarr=cpview_cQBArr[i].split("_");
+                //Each index element in  cpview_cQBArr contains of child nodes of specific parent and parent questionid seperated by "_"
+                if (viewchildarr[1] !=null && typeof viewchildarr[1]!='undefined')
+                {
+                    if(!HasClass((document.getElementById('quemainrow_' + viewchildarr[1])), 'questionBranch_hide'))
+                    {
+                    
+                        childNodes = viewchildarr[0];
+                        if (childNodes.indexOf(",") != -1)
+			            {
+				            childNodesArr = childNodes.split(",");
+				            for (j=0; j<childNodesArr.length; j++)
+				            {
+				                var _childElement = document.getElementById("quemainrow_"  + childNodesArr[j]);
+            				    			
+			                    if(typeof _childElement !='undefined' && _childElement!=null)
+			                    {	
+				                    //Remove that child from the node
+				                    if (HasClass(_childElement, 'questionBranch_hide')) 
+				                    {	
+				                        RemoveClass(_childElement, 'questionBranch_hide');
+				                    }
+				                }
+			                }
+            				
+			            }
+			            else
+			            {
+			                var _childElement = document.getElementById("quemainrow_" + viewchildarr[0]);
+            			    				
+		                    if(typeof _childElement !='undefined' && _childElement!=null)
+		                    {	
+			                    //Remove that child from the node
+			                    if (HasClass(_childElement, 'questionBranch_hide')) 
+			                    {	
+			                        RemoveClass(_childElement, 'questionBranch_hide');
+			                    }
+			                }
+			            }
+		            }	
+    		    } 
+		    }
+		}
+    }
+}
+
+//This is when we selected parent and child option and saved it and 
+//when it is loaded again, we store the qbchildren that we are showing in the div tag 
+function savedformattributes (calledFrom,DivContainerName,Qid,Qtype,qbchildren)
+{
+var _parentDivElement;
+var qbhistory;
+qbhistory="";
+
+if (calledFrom == "massapply")
+	_parentDivElement = document.getElementById(DivContainerName);
+else
+	_parentDivElement = document.getElementById('questionContainer_' + Qid);
+	
+switch(Qtype.toUpperCase()) 
+	{
+		
+		case "MULTI-SELECT":
+		case "CHECKBOX":
+		
+				qbhistory =	(qbhistory != ''  ? (qbchildren + ',' + qbhistory) : qbchildren);
+			break;      
+			
+		case 'SELECT':
+		case 'SINGLE-SELECT':
+		case 'RADIO':  
+					
+			qbhistory=qbchildren;
+			break;    
+			
+		default:
+			qbhistory=qbchildren;
+	}
+	_parentDivElement.setAttribute('qbhistory', qbhistory);
+}
+
+function checkMaxLength(e, maxLength) {
+    var currentLength = e.value.length;
+    if (currentLength > maxLength)
+        e.value = e.value.substring(0, maxLength)
+}
+</script>
+
+
+
+<html dir="ltr">
+  <head>
+    <META http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, height=device-height, user-scalable=yes, minimum-scale=1">
+    <title>External Application v37 (US)</title>
+    <script>        var baseurl   = "/GQ/GQ.asp?tgstate=%3Cprofileid%3E%5EFoWJJrMCpMu3UoDxKF3RFOGklcMPie5y%3C%2Fprofileid%3E%3Cisnonprofile%3E0%3C%2Fisnonprofile%3E%3Cgqsessionid%3E%7BB9457E01%2D1056%2D405E%2D8192%2DDDCCD58DB02F%7D%3C%2Fgqsessionid%3E%3Csessionid%3E%5EptFn%2Fpw0LQcYZUJ8nPZMDcx7WcpJwf2nMHogFFd61imbbVxTU7g%5Fslp%5Frhc%5F8C6oIWkDHsLmOwcvQcAeff11Lrr6EmfyoK6XflgylGkkgKExvvL31Co%3D%3C%2Fsessionid%3E%3Csid%3E%5E%2FPrr09OOKf4IzJ5DZ2JODu5baIyVBtrRDMvMwoUgiuciLB%2FpMJ0qvBOgc7oOb79S%3C%2Fsid%3E%3Cpartnerid%3E26065%3C%2Fpartnerid%3E%3Cpprefix%3EMAX%3C%2Fpprefix%3E%3Csiteid%3E5578%3C%2Fsiteid%3E%3Cqsite%3E%3C%2Fqsite%3E%3Ccallingurl%3E%3C%2Fcallingurl%3E%3Clangid%3E1%3C%2Flangid%3E%3Clocaleid%3E1033%3C%2Flocaleid%3E%3Cisgtg%3E0%3C%2Fisgtg%3E%3Cgqid%3E742%3C%2Fgqid%3E%3Crenderingid%3E966%3C%2Frenderingid%3E%3Csendcandrefemail%3EYes%3C%2Fsendcandrefemail%3E%3Cemailencoding%3E0%3C%2Femailencoding%3E%3Ccandrefdefaulttemplate%3EYes%3C%2Fcandrefdefaulttemplate%3E%3Caipid%3E%3C%2Faipid%3E%3Cdrafttype%3E%3C%2Fdrafttype%3E%3Cresumedraft%3E%3C%2Fresumedraft%3E%3Csdattachments%3E%3C%2Fsdattachments%3E%3Cshowattachmentspage%3EFalse%3C%2Fshowattachmentspage%3E%3Cstackingrule%3E2%3C%2Fstackingrule%3E%3Cresumeidtopreview%3E0%3C%2Fresumeidtopreview%3E%3Cgqautoextraction%3ETrue%3C%2Fgqautoextraction%3E%3Creqtrigger%3EAuto%3C%2Freqtrigger%3E%3Cgtggroupid%3E%3C%2Fgtggroupid%3E%3Cjobtitlealiasqid%3E0%3C%2Fjobtitlealiasqid%3E%3Creferrerid%3E%3C%2Freferrerid%3E%3Cpropercase%3ENo%3C%2Fpropercase%3E%3Cblockreferral%3E%3C%2Fblockreferral%3E%3Coptionalextraction%3ENo%3C%2Foptionalextraction%3E%3Coffice07support%3EYes%3C%2Foffice07support%3E%3Cprofileimport%3E%3C%2Fprofileimport%3E%3Cssoid%3E%3C%2Fssoid%3E%3Cismobile%3E0%3C%2Fismobile%3E%3Cjobinfo%3E%5F%5F581708%7C1%7C742%5F%5F%3C%2Fjobinfo%3E&gqid=742&gqrenderingid=966&localeid=1033";                 var rowsShow  = "70,0,*,68";                 var rowsHide  = "0,0,*,68";                 var rowsShowError = "70,128,*,68";                 var rowsHideError = "0,128,*,68";                 var rowsHideAll  = "0,0,*,0";                 var rowsShowButton  = "70,0,*,0";                 var rowsHideButton  = "0,0,*,0";                 var isFirstPage = false;                 var prevtgurl = "";        var currentSection = 0;        var enablePrevious = false;        var enableNext  = false;        var enableClear  = false;        var showingProgress = true;                function loadPage(pageID)        {                           main.document.location.replace(baseurl + "&gqpageid=" + pageID + "&action=page");                                }                function loadSection(sectionID, hasHistory, nextOnly, disableClear)               {               enablePrevious  = hasHistory;               enableNext   = nextOnly;               enableClear   = disableClear;               var frmPage = main.document.getElementById('frmPage');                                         if(sectionID != currentSection)         {          currentSection = sectionID;          buttons.enableButtons=null;          buttons.document.location.replace(baseurl + "&gqsectionid=" + sectionID + "&action=buttons"+ "&custombuttons="+frmPage.custombuttons.value);               setTimeout('enableButtons()', 100);               }               else               {               var gqFrame = document.getElementById('gqFrame');                var sHideButton = "false";               if (typeof (frmPage.hidebutton) != "undefined" && frmPage.hidebutton != null)               {               sHideButton = frmPage.hidebutton.value;               }               if (sHideButton != "true")               {               if(showingProgress)               gqFrame.rows = rowsShow;               else               gqFrame.rows = rowsHide;               }               else               {               if(showingProgress)               gqFrame.rows = rowsShowButton;               else               gqFrame.rows = rowsHideButton;               }                enableButtons();               }               }                    function showProgress(sectionID)               {               var gqFrame = document.getElementById('gqFrame');               var frmPage = main.document.getElementById('frmPage');                var sHideButton = "false";               if (typeof (frmPage.hidebutton) != "undefined" && frmPage.hidebutton != null)               {               sHideButton = frmPage.hidebutton.value;               }                if (sHideButton != "true")               {               gqFrame.rows = rowsShow;               }               else               {               gqFrame.rows = rowsShowButton;               }               progress.document.location.replace(baseurl + "&gqsectionid=" + sectionID + "&action=progressbar");               enableButtons();                showingProgress = true;                       }                function hideProgress()               {                var gqFrame = document.getElementById('gqFrame');               var frmPage = main.document.getElementById('frmPage');                var sHideButton = "false";               if (typeof (frmPage.hidebutton) != "undefined" && frmPage.hidebutton != null)               {               sHideButton = frmPage.hidebutton.value;               }                if (sHideButton != "true")               {               gqFrame.rows = rowsHide;               }               else               {               gqFrame.rows = rowsHideButton;               }                             buttons.enableButtons();                showingProgress = false;               }                function nextPage()               {               main.ChangeDisabledFieldStates(false);               if (main.ValidateJSQuestions())               {               if(main.validateForm())               {               main.processForm();                var frmPage = main.document.getElementById('frmPage');                buttons.disableButtons();                frmPage.submit();               }               }               }                function saveAsDraft()               {               if (main.ValidateJSQuestionsOnPrevious())               {               var frmPage = main.document.getElementById('frmPage');                main.processForm();                frmPage.action.value = "saveasdraft";               buttons.disableButtons();               frmPage.submit();               }               }                function executeDraft()               {               document.location.replace(baseurl + "&action=executedraft");               }                function backPage()               {               main.ChangeDisabledFieldStates(false);               if (main.ValidateJSQuestionsOnPrevious())               {               var frmPage = main.document.getElementById('frmPage');                main.processForm();                                                            frmPage.action.value = "backpage";               buttons.disableButtons();               frmPage.submit();               }               }                function enableButtons()               {               if(typeof(buttons.enableButtons) == 'undefined' || buttons.enableButtons==null)               {               window.setTimeout("enableButtons()", 100);               }               else               {               buttons.enableButtons(enablePrevious, enableNext, enableClear);               }               }                function closeWindow()               {                                    try                     {                     if(typeof(opener) != 'undefined')                     {                     if(typeof(opener.reload) != 'undefined')                     opener.reload();                     }                      }                     catch(e)                     {                     }                     window.close();                                }                 function closeWindowUnload()               {               var frmPage = main.document.getElementById('frmPage');               if  (frmPage.nounload.value   != "true")               {               try               {               if(typeof(opener) != 'undefined')               {               if (opener.window.location.pathname.lastIndexOf('tg_cim_aip.asp') !=-1)               {               if(typeof(opener.reload) != 'undefined')               opener.reload();               }               }               }               catch(e)               {               }                                   window.close();                         }        }           function error(text)        {        var gqFrame = document.getElementById('gqFrame');         errors.document.open('text/html');        errors.document.write(htmlHeader() +        "<div class='text' style='padding-left:25px;color: red; font-weight: bold;'>" +               text +               htmlFooter());               errors.document.close();                                if(showingProgress)               gqFrame.rows = rowsShowError;               else               gqFrame.rows = rowsHideError;               }                function clearError(text)               {               var gqFrame = document.getElementById('gqFrame');                             if(showingProgress)               gqFrame.rows = rowsShow;               else               gqFrame.rows = rowsHide;               }                function reloadMain()               {               var frmPage = main.document.getElementById('frmPage');                frmPage.action.value   = "reload";               frmPage.nextpage.value = frmPage.gqpageid.value;               frmPage.submit();               }                function logoff()               {               try               {               if(typeof(opener) != 'undefined')               {               if(typeof(opener.reload) != 'undefined')               {               opener.reload();               }               else               {               var  newlocation = "../../../1033/asp/tg/Logout.asp?gqclose=yes&crl=no";            opener.location.href=newlocation;                     }          }          }         catch(e)         {         }                  window.close();        }                              function loadMainWindow()        {                    var popH = screen.availHeight;           var popW = screen.availWidth;                         var topPos = (screen.availHeight - popH)/2;               var leftPos = (screen.availWidth  - popW)/2;                             try               {               window.moveTo(leftPos, topPos);               window.resizeTo(popW, popH);               }               catch(e)               {               }                                  loadPage(17187);                 window.scrollTo(0,0);               }                function htmlHeader()               {               var head = "<html dir ='ltr'  class='ui-pagebg'>" +           "<head>";                                head = head + "<base target='_blank'  />" +                     '<link rel="stylesheet" type="text/css" href="/CSS/Partner_26065_5578.css"></link>' +                          "</head>" +           "<body style='margin: 0' class='ui-pagebg'>";                    return  head;        }                function htmlFooter()        {         return "</body>" +           "</html>";               }               function hideFrames()               {                                  var gqFrame = document.getElementById('gqFrame');                   gqFrame.rows = rowsHideAll;                                }                   function getWindowHeight()               {               return document.documentElement.offsetHeight;                }                function setAutoHeight(pixels){                 if (navigator.userAgent.match(/iphone/i) || navigator.userAgent.match(/ipad/i))                   document.getElementById('main').style.height=pixels+"px";               }                function calculateWindow(btnofstHeight)               {               document.getElementById("buttonDiv").style.height = btnofstHeight+"px";                if (!(navigator.userAgent.match(/iphone/i) || navigator.userAgent.match(/ipad/i)))               {               if(document.getElementById("mainDiv").style.height < screen.height)               {               document.getElementById("mainDiv").style.height = screen.height;               document.getElementById("main").style.height = screen.height;               }               }                              document.getElementById("buttonDiv").style.position = "fixed";               document.getElementById("buttonDiv").style.bottom = "0";                document.getElementById("progress").scrolling = "no";               document.getElementById("errors").scrolling = "no";               document.getElementById("buttons").scrolling = "no";                              window.scrollTo(0,0);                              if (navigator.userAgent.match(/iphone/i) || navigator.userAgent.match(/ipad/i))                 orientationchange();               }                function orientationchange()               {               var winWidth = 0;               var viewport = document.querySelector("meta[name=viewport]");               if(window.orientation == '90' || window.orientation == '-90')               {               winWidth = screen.height;               viewport.setAttribute('content', 'width=device-height, height=device-width, initial-scale=1.0, user-scalable=1');               }               else               {               winWidth = screen.width;               viewport.setAttribute('content', 'width=device-width, height=device-height, initial-scale=1.0, user-scalable=1');               }                document.getElementById("progressDiv").style.width = winWidth;               document.getElementById("progress").style.width = winWidth;               document.getElementById("mainDiv").style.width = winWidth;               document.getElementById("main").style.width = winWidth;               document.getElementById("buttonDiv").style.width = winWidth;               document.getElementById("buttons").style.width = winWidth;                var el = document.getElementById('buttons');               var childWindow = el.contentWindow?el.contentWindow:el.contentDocument;               childWindow.setFrameOrientation(window.orientation);                }               </script>
+  </head>
+  <script type='text/javascript'>
+var isTagpageview=true;
+
+function tagPageView() {
+}
+
+</script>
+<script type='text/javascript'>var IsMobile=0;var cmConversionStage = 0;function setCoremetricsConversionStage(stage) { cmConversionStage = stage; } function loadTagpageview() {  if (typeof isTagpageview !== "undefined") { tagPageView(); } } </script><frameset id="gqFrame" border="0" noresize="noresize" scrolling="no" onload="loadMainWindow()" onunload="closeWindowUnload()" rows="0,0,*,68">
+    <frame name="progress" id="progress" scrolling="no" noresize src="/GQ/blank.htm">
+    <frame name="errors" id="errors" scrolling="auto" noresize src="/GQ/blank.htm">
+    <frame name="main" id="main" scrolling="auto" noresize src="/GQ/blank.htm">
+    <frame name="buttons" id="buttons" scrolling="no" noresize src="/GQ/blank.htm">
+  </frameset>
+</html>
